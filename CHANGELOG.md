@@ -2,6 +2,20 @@
 
 All notable changes to the Universal Edition will be documented in this file.
 
+## [2.31.24] - 2025-12-01
+
+### 🎨 Icon Updates
+
+#### Changed
+- 🚪 **Door Button Icon** - Updated to custom ALL icon
+- 💡 **Driver Light Icon** - Updated to custom driver-light icon (both manifest and app.js)
+- 🖼️ **Additional Icons** - Added 4 new icon assets
+
+#### Technical
+- ✅ Unified icon naming: `driver-light.png` and `driver-light_On.png`
+- ✅ Updated all references in app.js to match new icon paths
+- ✅ Total assets: 287 files (1750.47 KB)
+
 ## [2.31.19] - 2025-12-01
 
 ### 🎨 UI/UX Improvements - Complete Action Reorganization

@@ -1918,8 +1918,8 @@ $SD.onDidReceiveSettings("de.blackmautz.telemetry.all.lightcontrol", ({context, 
 		},
 		"Driver Light": {
 			button: "Driver Light",
-			iconOff: "driver_light.png",
-			iconOn: "driver_light_on.png"
+			iconOff: "driver-light.png",
+			iconOn: "driver-light_On.png"
 		}
 	};
 	
@@ -3330,12 +3330,12 @@ DriverLightAction.onKeyDown(({ action, context, device, event, payload }) => {
 
 DriverLightAction.onWillAppear(({ action, context, device, event, payload }) => {
 	// Set initial icon
-	$SD.setImage(context, "actions/assets/driver_light.png");
+	$SD.setImage(context, "actions/assets/driver-light.png");
 	
 	// Start tracking Driver Light button state
 	RemoveInterval(context);
 	AddInterval(context, function() {
-		UpdateButtonState("Driver Light", "Secondary", "driver_light.png", "driver_light_on.png", context);
+		UpdateButtonState("Driver Light", "Secondary", "driver-light.png", "driver-light_On.png", context);
 	});
 });
 

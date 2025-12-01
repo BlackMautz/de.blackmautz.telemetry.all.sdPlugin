@@ -6,7 +6,7 @@
 	"Name": "BlackMautz TML Telemetry - ALL",
 	"Icon": "actions/assets/Category",
 	"URL": "https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom_Solaris",
-	"Version": "2.31.19.0",
+	"Version": "2.31.24.0",
 	"UUID": "de.blackmautz.telemetry.all",
 	"Software": {
 		"MinimumVersion": "6.4"
@@ -85,14 +85,14 @@
 			"PropertyInspectorPath": "actions/property-inspector/gearselectinspector.html"
 		},
 		{
-			"Icon": "actions/assets/Icon_Button_Off",
+			"Icon": "actions/assets/retarder",
 			"Name": "Retarder Toggle",
 			"States": [
 				{
-					"Image": "actions/assets/Icon_Button_Off"
+					"Image": "actions/assets/retarder"
 				},
 				{
-					"Image": "actions/assets/Icon_Button_On"
+					"Image": "actions/assets/retarder-c"
 				}
 			],
 			"Tooltip": "Toggle retarder (engine brake) on/off.",
@@ -125,11 +125,11 @@
 			"UUID": "de.blackmautz.telemetry.all.header.doors"
 		},
 		{
-			"Icon": "actions/assets/Icon_Button_Off",
+			"Icon": "actions/assets/ALL",
 			"Name": "Door Button",
 			"States": [
 				{
-					"Image": "actions/assets/Icon_Button_Off"
+					"Image": "actions/assets/ALL"
 				}
 			],
 			"Tooltip": "Controls the passenger doors.",
@@ -226,11 +226,11 @@
 			"PropertyInspectorPath": "actions/property-inspector/lightswitchinspector.html"
 		},
 		{
-			"Icon": "actions/assets/InteriorLight_Off_v2",
+			"Icon": "actions/assets/indoor-light",
 			"Name": "Interior Light Control",
 			"States": [
 				{
-					"Image": "actions/assets/InteriorLight_Off_v2"
+					"Image": "actions/assets/indoor-light"
 				}
 			],
 			"Tooltip": "Universal interior light control - auto-detects bus type (Solaris/Mercedes/VDL/Scania/MAN). Modes: Off/Dim/Full/Left/Right.",
@@ -238,17 +238,17 @@
 			"PropertyInspectorPath": "actions/property-inspector/interiorlightinspector.html"
 		},
 		{
-			"Icon": "actions/assets/Icon_Button_Off",
+			"Icon": "actions/assets/driver-light",
 			"Name": "Driver Light",
 			"Controllers": [
 				"Keypad"
 			],
 			"States": [
 				{
-					"Image": "actions/assets/Icon_Button_Off"
+					"Image": "actions/assets/driver-light"
 				},
 				{
-					"Image": "actions/assets/Icon_Button_On"
+					"Image": "actions/assets/driver-light_On"
 				}
 			],
 			"Tooltip": "Toggle driver's cabin light. Works on all buses.",

@@ -21,12 +21,12 @@
 
 Unterstützt **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide**, **VDL Citea LLE** UND **MAN Lion's City** mit allen Features in einem Plugin!
 
-**Version 2.31.19** - Alle Funktionen getestet und funktionsfähig in allen fünf Bussen!
+**Version 2.31.24** - Alle Funktionen getestet und funktionsfähig in allen fünf Bussen!
 
 ## 📥 Installation & Updates
 
 ### Installation
-1. **[Download v2.31.19](https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom/releases)** - Neueste `.streamDeckPlugin` Datei
+1. **[Download v2.31.24](https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom/releases)** - Neueste `.streamDeckPlugin` Datei
 2. **Doppelklick** auf die Datei
 3. **Fertig!** Stream Deck installiert automatisch
 
@@ -166,6 +166,11 @@ Alle Schaltflächen sind jetzt übersichtlich in Kategorien organisiert mit visu
 **Hinweis:** Bus-spezifische Schaltflächen sind im Namen gekennzeichnet. Universelle Features funktionieren in allen Bussen!
 
 ## ✨ Highlights
+
+### 🚀 Was ist neu in v2.31.24?
+- 🎨 **Icon Updates** - Door Button und Driver Light mit eigenen Icons
+- 🖼️ **Neue Assets** - 4 zusätzliche Icon-Dateien
+- ✅ **Verbesserte Icons** - Klarere visuelle Darstellung
 
 ### 🚀 Was ist neu in v2.31.19?
 - 🎨 **Neue Kategorisierung** - 51 Aktionen in 12 übersichtlichen Kategorien
