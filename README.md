@@ -304,14 +304,32 @@ Bei Problemen oder Fragen:
 
 **A Stream Deck Plugin for ALL buses in The Bus!**
 
-Supports **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide** AND **VDL Citea LLE** with all features in one plugin!
+Supports **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide**, **VDL Citea LLE** AND **MAN Lion's City** with all features in one plugin!
 
-**Version 2.0.4** - All functions tested and working in all four buses!
+**Version 2.31.24** - All functions tested and working in all five buses!
+
+## 📸 Screenshots
+
+### Overview
+![Stream Deck Overview 1](screenshots/übersicht1.png)
+![Stream Deck Overview 2](screenshots/übersicht2.png)
+
+### Features in Detail
+![Door Control](screenshots/doors.png)
+*Door control with various options*
+
+![Light Control](screenshots/lightcontrol.png)
+*Comprehensive light control for all buses*
+
+![Interior Lighting](screenshots/interiorlightfull.png)
+*Interior Light Control with multiple modes*
+
+---
 
 ## 📥 Installation & Updates
 
 ### Installation
-1. **[Download v2.0.4](https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom/releases)** - Latest `.streamDeckPlugin` file
+1. **[Download v2.31.24](https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom/releases)** - Latest `.streamDeckPlugin` file
 2. **Double-click** the file
 3. **Done!** Stream Deck installs automatically
 
@@ -323,107 +341,107 @@ Click **"Watch"** → **"Custom"** → **"Releases"** ✅
 
 ## 🎮 All Features at a Glance
 
-**45 Buttons with 100+ individual functions!**
+**51 Actions: 11 Category Headers + 40 Functional Buttons with 100+ options!**
 
-### 🚪 Door Control (5 Buttons)
-- **Door 1-4** - Open/close individual doors with lock function
-  - 📊 Door Progress Display (shows opening %, Scania: 0-100%, others: 0%/100%)
-- **Change Door** - 6 options:
-  - First Door Open/Close
-  - Second Door Open/Close
-  - Third Door Open/Close
-  - Fourth Door Open/Close
-  - All Doors Open/Close
-  - Automatic Door Closing
+### 📋 New Categorization (v2.31.19)
+All buttons are now organized in categories with visual separators:
 
-### 💰 Cash System (2 Buttons)
-- **Payment Status** - Payment status display
-- **Change Action** - Return change
+- 📡 **SYSTEM** - Telemetry connection status
+- 🚗 **MOTOR** - Ignition, gear, retarder, ASR
+- 🚪 **TÜREN** - Door control, kneeling, wheelchair ramp
+- 🚦 **LICHTER** - All lighting options
+- 🔊 **BEDIENUNG** - Horn, high beam, wipers, camera
+- 🛑 **BREMSEN** - Parking brake, stop brake
+- ❄️ **KOMFORT** - Climate, windows, reading lights
+- ⚡ **ELEKTRO** - Pantograph
+- ℹ️ **DISPLAYS** - Engine info, speed, fuel, passengers, LED monitor
+- 💰 **TICKETING** - Cash system, payment status
+- 🛠️ **ERWEITERT** - USB clearance, RBL (traffic signal priority)
+- ⚙️ **CUSTOM** - Custom actions, bus start options
 
-### ⚙️ Vehicle Control (6 Buttons)
-- **Gear Select** - Automatic gear selection (D/N/R)
-- **Ignition** - Ignition on/off
-- **Start Engine** - Start/stop engine
-- **Fixing Brake** - Parking brake toggle
-- **Stop Brake (Mercedes)** - Station brake
-- **Wheelchair Ramp** - Extend/retract ramp
-
-### 💡 Lighting (7 Buttons with 40+ options!)
-- **Light Control** - 15+ light options:
-  - Interior Lights On/Off
-  - Side/Rear/Front Lights On/Off
-  - Hazard Lights On/Off
-  - Turn Signals Left/Right On/Off
-  - Fog Lights Front/Rear On/Off
-  - High Beam On/Off
-  - All Lights On/Off
-- **Light Switch** - 3-way switch with 6 positions:
-  - Switch Right: Off → Parking → Headlights → High Beam → Fog Front → Fog Rear
-  - Switch Left (reverse)
-  - Show Status
-- **Indicator Control** - 3 options:
-  - Turn Signal Left/Right
-  - Hazard Lights
-- **Scania Lights (Scania)** - 6 options:
-  - Fog Light Front/Rear
-  - Interior Light Front/Back Up (Dimmed)
-  - Interior Light Front/Back Down (Bright)
-- **Interior Light Dim (Mercedes/VDL)** - Interior lighting 30% dimmed toggle
-- **Interior Light Full (Mercedes/VDL)** - Interior lighting 100% bright toggle
-- **Reading Light Clearance (VDL)** - Reading light clearance for passengers
-
-### 🪟 Windows & Climate (3 Buttons)
-- **Window Control** - 10 options:
-  - Driver Window Open/Close
-  - Window Shade Up/Down
-  - Window Shade Side Up/Down (VDL)
-  - Window Shade Front Up/Down (Scania)
-  - Window Shade Left Up/Down (Scania)
-- **Window/Mirror Heating** - Window/mirror heating toggle
-- **Climate Control** - Display temperature & ventilation
-
-### 🔽 Kneeling & Lifting (2 Buttons)
-- **Kneeling/Lifting** - 6 options:
+### 🚪 Door Control (4 Buttons)
+- **Door Button** - Door control with configurable options
+  - 📊 Door progress display (shows opening %, Scania: 0-100%, others: 0%/100%)
+  - Open/close individual doors with lock function
+- **Kneeling/Lifting Control** - 6 options:
   - Lifting Front
   - Lifting Rear
   - Kneeling Front
   - Kneeling Rear
   - Lifting
   - Kneeling
+- **Wheelchair Request** - Send wheelchair ramp request
+- **Stop Request** - Display stop request status
 
-### 🌧️ Windshield Wipers (2 Buttons)
-- **Wiper Speed Up** - Increase level
-- **Wiper Speed Down** - Decrease level
+### 💰 Cash System (2 Buttons)
+- **Ticket Sale Status** - Payment status display
+- **Cash Change Button** - Return change
 
-### 📯 Horn & Signals (2 Buttons)
-- **Horn** - Horn
-- **Flash High Beam** - Flash high beam/headlight flasher
+### ⚙️ Vehicle Control (4 Buttons)
+- **Gear Selector** - Automatic gear selection (D/N/R)
+- **Ignition Control** - Ignition on/off
+- **Retarder Toggle** - Engine brake/retarder toggle
+- **Traction Control (ASR)** - Traction control toggle
 
-### 📹 Cameras (1 Button)
-- **Camera Switch** - Switch camera (works with all 4 buses!)
+### 💡 Lighting (6 Buttons with 40+ options!)
+- **Indicator Control** - Indicator control:
+  - Turn signals left/right
+  - Hazard lights
+- **Light Switch** - 3-way switch with 6 positions:
+  - Switch right: Off → Parking → Headlights → High Beam → Fog Front → Fog Rear
+  - Switch left (reverse)
+  - Show status
+- **Interior Light Control** - Universal interior light control:
+  - Auto-detects bus type (Solaris/Mercedes/VDL/Scania/MAN)
+  - Modes: Off/Dim/Full/Left/Right
+- **Driver Light** - Toggle driver's cabin light (works on all buses)
+- **Light Control (Solaris)** - Control various lights on the bus (Solaris-specific)
+- **Scania Fog Lights** - Front/rear fog lights (Scania-specific)
+- **Reading Light Clearance (VDL)** - Reading light clearance for passengers (VDL-specific)
 
-### 🚦 Special Features (5 Buttons)
-- **Pantograph On/Off (Solaris)** - Pantograph for trolleybus
-- **Retarder Toggle** - Engine brake/retarder (universal)
-- **Traction Control (ASR)** - Traction control toggle (universal)
-- **RBL Toggle** - Traffic signal priority system for green wave
-  - Computer-controlled operating system
-  - Bus automatically gets green lights at intersections
-- **USB Clearance** - USB clearance
+### 🪟 Windows & Climate (2 Buttons)
+- **Climate Control** - Climate control:
+  - Display temperature & ventilation
+  - Various climate functions
+- **Window Control** - Window control with 10+ options:
+  - Driver window open/close
+  - Window shades up/down
+  - Window shades side up/down (VDL)
+  - Window shades front/left up/down (Scania)
 
-### 📊 Info Displays (5 Buttons)
-- **Fuel Info** - Display fuel level
-- **Passengers Info** - Display passenger count
-- **Engine Info** - Display engine status
-- **Speed Info** - Display speed
-- **Stop Request** - Stop request display
+### 🔊 Controls (5 Buttons)
+- **Horn** - Activate horn
+- **High Beam Flasher** - Flash high beam/headlight flasher
+- **Wiper Up** - Increase wiper level
+- **Wiper Down** - Decrease wiper level
+- **Camera Switch** - Switch camera view (works with all 5 buses!)
 
-### 🎛️ Advanced Features (2 Buttons)
-- **Custom Action** - Custom events without button function
-- **Custom Button** - Custom events with button function
+### 🛑 Brakes (2 Buttons)
+- **Fixing Brake** - Toggle parking brake (press to activate, release to deactivate)
+- **Stop Brake** - Toggle stop brake
 
-### 💡 Monitoring (1 Button)
-- **LED Monitor** - Monitor all LED states
+### 🚦 Special Features (4 Buttons)
+- **Pantograph On** - Activate pantograph (for trolleybuses)
+- **Pantograph Off** - Deactivate pantograph (for trolleybuses)
+- **USB Clearance** - Toggle USB clearance
+- **RBL Toggle** - Toggle traffic signal priority system for green wave
+  - RBL = Rechnergesteuertes Betriebsleitsystem (Computer-controlled Operating System)
+  - Computer-controlled traffic signal priority system
+  - Bus reports to traffic lights and automatically gets green
+  - Commonly used in Germany/Austria for public transit
+
+### 📊 Info Displays (6 Buttons)
+- **Engine Info** - Display engine and driving information
+- **Speed Display** - Display current and allowed speed
+- **Fuel Display** - Display fuel level, percentage, and low fuel warning
+- **Passengers** - Display passenger and door information
+- **Infos** - Display window heating, mirror heating, and stop request status
+- **LED Monitor (experimental/untested)** - Monitor bus LEDs (experimental/untested)
+
+### 🎛️ Advanced Features (3 Buttons)
+- **Custom Action** - Execute custom commands
+- **Bus Start Options (TML Custom Start Button)** - Bus start options
+- **ALL Button (TML Custom Button)** - Custom button or switch with feedback
 
 ---
 
@@ -449,13 +467,13 @@ Click **"Watch"** → **"Custom"** → **"Releases"** ✅
 ## ✨ Highlights
 
 ### 🚀 What's new in v2.0.4?
-- 🚦 **Retarder, ASR & RBL** - Professional bus features for all 4 buses
+- 🚦 **Retarder, ASR & RBL** - Professional bus features for all 5 buses
 - 💡 **VDL Reading Light** - Reading light clearance for passengers
 - 🔄 **Traffic Signal Priority System (RBL)** - Automatically get green lights at intersections
 - 📊 **API-based Icon Synchronization** - Icons always show the real bus status
 
 ### 🎯 Why this plugin?
-- ✅ **All 4 buses** in one plugin - no more separate downloads!
+- ✅ **All 5 buses** in one plugin - no more separate downloads!
 - ✅ **100+ functions** - Complete bus control from Stream Deck
 - ✅ **Smart Icons** - Automatically show current status
 - ✅ **Door Progress** - See door opening in real-time (Scania: 0-100%)
@@ -465,6 +483,36 @@ Click **"Watch"** → **"Custom"** → **"Releases"** ✅
 ---
 
 ## 📋 Changelog
+
+### v2.31.24 - Icon Updates (2025-01-14)
+- 🎨 **Driver Light Icon Update** - Unified icon naming scheme
+  - Icon changed to `driver-light.png` / `driver-light_On.png`
+  - Updated all references in app.js for consistency
+- 🚪 **Door Button Icon Update** - Now uses universal `ALL.png` icon
+- 🛑 **Retarder Icons** - Added `retarder.png` and `retarder-c.png` for consistency
+
+### v2.31.19 - UI Reorganization & MAN Support (2025-01-14)
+- 🚌 **MAN Lion's City Support** - Fifth bus fully supported!
+  - All features now work with MAN buses
+  - Camera switch compatible with MAN
+  - Interior light control works universally
+- 📂 **Complete UI Reorganization** - 51 actions in 12 categories:
+  - 📡 SYSTEM (2 buttons)
+  - 🚗 MOTOR (4 buttons)
+  - 🚪 TÜREN (4 buttons)
+  - 🚦 LICHTER (6 buttons)
+  - 🔊 BEDIENUNG (5 buttons)
+  - 🛑 BREMSEN (2 buttons)
+  - ❄️ KOMFORT (2 buttons)
+  - ⚡ ELEKTRO (2 buttons)
+  - ℹ️ DISPLAYS (6 buttons)
+  - 💰 TICKETING (2 buttons)
+  - 🛠️ ERWEITERT (3 buttons)
+  - ⚙️ CUSTOM (2 buttons)
+- 🎯 **Visual Category Headers** - Beautiful separators with emojis (━━━ 📡 CATEGORY ━━━)
+- 🌍 **Universal Interior Light Control** - Auto-detects bus type
+  - Works with all 5 buses: Solaris, Mercedes, VDL, Scania, MAN
+  - Supports modes: Off/Dim/Full/Left/Right
 
 ### v2.0.4 - VDL Extended Features (2025-11-29)
 - 💡 **Reading Light Clearance** - Reading light clearance for passengers (VDL)
@@ -522,6 +570,7 @@ The plugin automatically detects which bus is active:
 - **Mercedes:** Uses standard API with additional Interior Light Events
 - **Scania:** Uses `/vehicles/current` fallback and `Doors[]` property
 - **VDL Citea LLE:** Uses `/vehicles/current` with `InteriorLightLevel` button for 3-state Interior Lights
+- **MAN Lion's City:** Uses standard API with universal interior light control
 
 ## 👨‍💻 Credits
 
