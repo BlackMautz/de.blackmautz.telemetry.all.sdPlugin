@@ -1680,10 +1680,10 @@
             // Indicator
             if (data.IndicatorState !== undefined) {
                 const indicator = parseInt(data.IndicatorState) || 0;
-                const text = indicator === 0 ? "AUS" : indicator === 1 ? "◀️ LINKS" : indicator === 2 ? "▶️ RECHTS" : "⚠️ BEIDE";
+                const text = indicator === 0 ? "AUS" : indicator === -1 ? "◀️ LINKS" : indicator === 1 ? "▶️ RECHTS" : "⚠️ WARNBLINKER";
                 const elem = document.getElementById('value_indicator');
                 elem.textContent = text;
-                elem.className = 'data-value' + (indicator > 0 ? ' warning' : '');
+                elem.className = 'data-value' + (indicator !== 0 ? ' warning' : '');
             }
 
             // Wiper

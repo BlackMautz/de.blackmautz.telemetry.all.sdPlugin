@@ -6,7 +6,7 @@
 	"Name": "BlackMautz TML Telemetry - ALL",
 	"Icon": "actions/assets/Category",
 	"URL": "https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom_Solaris",
-	"Version": "4.2.0.0",
+	"Version": "4.2.1.0",
 	"UUID": "de.blackmautz.telemetry.all",
 	"Software": {
 		"MinimumVersion": "6.4"
