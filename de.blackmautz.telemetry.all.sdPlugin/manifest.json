@@ -6,7 +6,7 @@
 	"Name": "BlackMautz TML Telemetry - ALL",
 	"Icon": "actions/assets/Category",
 	"URL": "https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom_Solaris",
-	"Version": "2.31.13.0",
+	"Version": "2.31.19.0",
 	"UUID": "de.blackmautz.telemetry.all",
 	"Software": {
 		"MinimumVersion": "6.4"
@@ -25,88 +25,16 @@
 	"CategoryIcon": "actions/assets/Category",
 	"Actions": [
 		{
-			"Icon": "actions/assets/Icon_Button_Off",
-			"Name": "Door Button",
+			"Icon": "actions/assets/Category",
+			"Name": "━━━ 📡 SYSTEM ━━━",
 			"States": [
 				{
-					"Image": "actions/assets/Icon_Button_Off"
+					"Image": "actions/assets/Category",
+					"TitleAlignment": "middle"
 				}
 			],
-			"Tooltip": "Controls the passenger doors.",
-			"UUID": "de.blackmautz.telemetry.all.dooraction",
-			"PropertyInspectorPath": "actions/property-inspector/doorbuttoninspector.html"
-		},
-		{
-			"Icon": "actions/assets/Icon_Coin",
-			"Name": "Cash Change Button",
-			"States": [
-				{
-					"Image": "actions/assets/Icon_Coin"
-				}
-			],
-			"Tooltip": "Controls the cash system.",
-			"UUID": "de.blackmautz.telemetry.all.changeaction",
-			"PropertyInspectorPath": "actions/property-inspector/changebuttoninspector.html"
-		},
-		{
-			"Icon": "actions/assets/Icon_N_Normal",
-			"Name": "Gear Selector",
-			"States": [
-				{
-					"Image": "actions/assets/Icon_N_Normal"
-				}
-			],
-			"Tooltip": "Controls the Gear Selector.",
-			"UUID": "de.blackmautz.telemetry.all.gearselect",
-			"PropertyInspectorPath": "actions/property-inspector/gearselectinspector.html"
-		},
-		{
-			"Icon": "actions/assets/Icon_Ignition",
-			"Name": "Ignition Control",
-			"States": [
-				{
-					"Image": "actions/assets/Icon_Ignition"
-				}
-			],
-			"Tooltip": "Controls the Ignition.",
-			"UUID": "de.blackmautz.telemetry.all.ignition",
-			"PropertyInspectorPath": "actions/property-inspector/ignitioninspector.html"
-		},
-		{
-			"Icon": "actions/assets/Icon_Custom",
-			"Name": "Custom Action",
-			"States": [
-				{
-					"Image": "actions/assets/Icon_Custom"
-				}
-			],
-			"Tooltip": "Executes Custom Commands",
-			"UUID": "de.blackmautz.telemetry.all.customaction",
-			"PropertyInspectorPath": "actions/property-inspector/customactioninspector.html"
-		},
-		{
-			"Icon": "actions/assets/Icon_SaleStatus",
-			"Name": "Ticket Sale Status",
-			"States": [
-				{
-					"Image": "actions/assets/Icon_SaleStatus"
-				}
-			],
-			"Tooltip": "Displays the Current Cash payment Status",
-			"UUID": "de.blackmautz.telemetry.all.paymentstatus",
-			"PropertyInspectorPath": "actions/property-inspector/paymentstatusinspector.html"
-		},
-		{
-			"Icon": "actions/assets/Icon_Custom",
-			"Name": "Bus Start Options",
-			"States": [
-				{
-					"Image": "actions/assets/Icon_Custom"
-				}
-			],
-			"Tooltip": "BusStartOptions",
-			"UUID": "de.blackmautz.telemetry.all.start",
-			"PropertyInspectorPath": "actions/property-inspector/startbuttoninspector.html"
+			"Tooltip": "Category Header - SYSTEM",
+			"UUID": "de.blackmautz.telemetry.all.header.system"
 		},
 		{
 			"Icon": "actions/assets/Icon_Connected",
@@ -121,6 +49,151 @@
 			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
 		},
 		{
+			"Icon": "actions/assets/Category",
+			"Name": "━━━ 🚗 MOTOR ━━━",
+			"States": [
+				{
+					"Image": "actions/assets/Category",
+					"TitleAlignment": "middle"
+				}
+			],
+			"Tooltip": "Category Header - MOTOR",
+			"UUID": "de.blackmautz.telemetry.all.header.motor"
+		},
+		{
+			"Icon": "actions/assets/Icon_Ignition",
+			"Name": "Ignition Control",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Ignition"
+				}
+			],
+			"Tooltip": "Controls the Ignition.",
+			"UUID": "de.blackmautz.telemetry.all.ignition",
+			"PropertyInspectorPath": "actions/property-inspector/ignitioninspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_N_Normal",
+			"Name": "Gear Selector",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_N_Normal"
+				}
+			],
+			"Tooltip": "Controls the Gear Selector.",
+			"UUID": "de.blackmautz.telemetry.all.gearselect",
+			"PropertyInspectorPath": "actions/property-inspector/gearselectinspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Button_Off",
+			"Name": "Retarder Toggle",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Button_Off"
+				},
+				{
+					"Image": "actions/assets/Icon_Button_On"
+				}
+			],
+			"Tooltip": "Toggle retarder (engine brake) on/off.",
+			"UUID": "de.blackmautz.telemetry.all.retarder"
+		},
+		{
+			"Icon": "actions/assets/Icon_Button_Off",
+			"Name": "Traction Control (ASR)",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Button_Off"
+				},
+				{
+					"Image": "actions/assets/Icon_Button_On"
+				}
+			],
+			"Tooltip": "Toggle traction control (ASR) on/off.",
+			"UUID": "de.blackmautz.telemetry.all.tractioncontrol"
+		},
+		{
+			"Icon": "actions/assets/Category",
+			"Name": "━━━ 🚪 TÜREN ━━━",
+			"States": [
+				{
+					"Image": "actions/assets/Category",
+					"TitleAlignment": "middle"
+				}
+			],
+			"Tooltip": "Category Header - TÜREN",
+			"UUID": "de.blackmautz.telemetry.all.header.doors"
+		},
+		{
+			"Icon": "actions/assets/Icon_Button_Off",
+			"Name": "Door Button",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Button_Off"
+				}
+			],
+			"Tooltip": "Controls the passenger doors.",
+			"UUID": "de.blackmautz.telemetry.all.dooraction",
+			"PropertyInspectorPath": "actions/property-inspector/doorbuttoninspector.html"
+		},
+		{
+			"Icon": "actions/assets/kneeling",
+			"Name": "Kneeling/Lifting Control",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/kneeling"
+				}
+			],
+			"Tooltip": "Controls kneeling and lifting functions.",
+			"UUID": "de.blackmautz.telemetry.all.kneelinglift",
+			"PropertyInspectorPath": "actions/property-inspector/kneelingliftinspector.html"
+		},
+		{
+			"Icon": "actions/assets/Haltestelle_wheelchair",
+			"Name": "Wheelchair Request",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/Haltestelle_wheelchair"
+				}
+			],
+			"Tooltip": "Sends wheelchair request.",
+			"UUID": "de.blackmautz.telemetry.all.wheelchairrequest",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/Haltestelle",
+			"Name": "Stop Request",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/Haltestelle"
+				}
+			],
+			"Tooltip": "Displays stop request status.",
+			"UUID": "de.blackmautz.telemetry.all.stoprequest",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/Category",
+			"Name": "━━━ 🚦 LICHTER ━━━",
+			"States": [
+				{
+					"Image": "actions/assets/Category",
+					"TitleAlignment": "middle"
+				}
+			],
+			"Tooltip": "Category Header - LICHTER",
+			"UUID": "de.blackmautz.telemetry.all.header.lights"
+		},
+		{
 			"Icon": "actions/assets/Icon_Indicator",
 			"Name": "Indicator Control",
 			"States": [
@@ -133,16 +206,53 @@
 			"PropertyInspectorPath": "actions/property-inspector/indicatorcontrolinspector.html"
 		},
 		{
+			"Icon": "actions/assets/Icon_Headlight_Off",
+			"Name": "Light Switch",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Headlight_Off",
+					"Name": "Off"
+				},
+				{
+					"Image": "actions/assets/Icon_Headlight_On",
+					"Name": "On"
+				}
+			],
+			"Tooltip": "Controls the main light switch (Off/Parking/Headlights/High Beam/Fog Front/Fog Rear).",
+			"UUID": "de.blackmautz.telemetry.all.lightswitchv2",
+			"PropertyInspectorPath": "actions/property-inspector/lightswitchinspector.html"
+		},
+		{
+			"Icon": "actions/assets/InteriorLight_Off_v2",
+			"Name": "Interior Light Control",
+			"States": [
+				{
+					"Image": "actions/assets/InteriorLight_Off_v2"
+				}
+			],
+			"Tooltip": "Universal interior light control - auto-detects bus type (Solaris/Mercedes/VDL/Scania/MAN). Modes: Off/Dim/Full/Left/Right.",
+			"UUID": "de.blackmautz.telemetry.all.interiorlightv2",
+			"PropertyInspectorPath": "actions/property-inspector/interiorlightinspector.html"
+		},
+		{
 			"Icon": "actions/assets/Icon_Button_Off",
-			"Name": "ALL Button",
+			"Name": "Driver Light",
+			"Controllers": [
+				"Keypad"
+			],
 			"States": [
 				{
 					"Image": "actions/assets/Icon_Button_Off"
+				},
+				{
+					"Image": "actions/assets/Icon_Button_On"
 				}
 			],
-			"Tooltip": "Custom Button or Switch with feedback",
-			"UUID": "de.blackmautz.telemetry.all.custombutton",
-			"PropertyInspectorPath": "actions/property-inspector/custombuttoninspector.html"
+			"Tooltip": "Toggle driver's cabin light. Works on all buses.",
+			"UUID": "de.blackmautz.telemetry.all.driverlight"
 		},
 		{
 			"Icon": "actions/assets/Icon_Headlight_Off",
@@ -160,34 +270,31 @@
 			"PropertyInspectorPath": "actions/property-inspector/lightcontrolinspector.html"
 		},
 		{
-			"Icon": "actions/assets/wiper",
-			"Name": "Wiper Up",
+			"Icon": "actions/assets/Icon_Headlight_Off",
+			"Name": "Scania Fog Lights",
 			"Controllers": [
 				"Keypad"
 			],
 			"States": [
 				{
-					"Image": "actions/assets/wiper"
+					"Image": "actions/assets/Icon_Headlight_Off"
 				}
 			],
-			"Tooltip": "Increases wiper level.",
-			"UUID": "de.blackmautz.telemetry.all.wiperup",
-			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+			"Tooltip": "Controls Scania-specific fog lights (Front/Rear). Interior Lights moved to 'Interior Light Control' button.",
+			"UUID": "de.blackmautz.telemetry.all.scaniafoglights",
+			"PropertyInspectorPath": "actions/property-inspector/scaniafoglightsinspector.html"
 		},
 		{
-			"Icon": "actions/assets/wiper",
-			"Name": "Wiper Down",
-			"Controllers": [
-				"Keypad"
-			],
+			"Icon": "actions/assets/Category",
+			"Name": "━━━ 🔊 BEDIENUNG ━━━",
 			"States": [
 				{
-					"Image": "actions/assets/wiper"
+					"Image": "actions/assets/Category",
+					"TitleAlignment": "middle"
 				}
 			],
-			"Tooltip": "Decreases wiper level.",
-			"UUID": "de.blackmautz.telemetry.all.wiperdown",
-			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+			"Tooltip": "Category Header - BEDIENUNG",
+			"UUID": "de.blackmautz.telemetry.all.header.controls"
 		},
 		{
 			"Icon": "actions/assets/air-horn",
@@ -220,6 +327,63 @@
 			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
 		},
 		{
+			"Icon": "actions/assets/wiper",
+			"Name": "Wiper Up",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/wiper"
+				}
+			],
+			"Tooltip": "Increases wiper level.",
+			"UUID": "de.blackmautz.telemetry.all.wiperup",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/wiper",
+			"Name": "Wiper Down",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/wiper"
+				}
+			],
+			"Tooltip": "Decreases wiper level.",
+			"UUID": "de.blackmautz.telemetry.all.wiperdown",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/view-next-camera",
+			"Name": "Camera Switch",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/view-next-camera"
+				}
+			],
+			"Tooltip": "Switches camera view.",
+			"UUID": "de.blackmautz.telemetry.all.cameraswitch",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/Category",
+			"Name": "━━━ 🛑 BREMSEN ━━━",
+			"States": [
+				{
+					"Image": "actions/assets/Category",
+					"TitleAlignment": "middle"
+				}
+			],
+			"Tooltip": "Category Header - BREMSEN",
+			"UUID": "de.blackmautz.telemetry.all.header.brakes"
+		},
+		{
 			"Icon": "actions/assets/Icon_Brake_Off",
 			"Name": "Fixing Brake",
 			"Controllers": [
@@ -250,19 +414,16 @@
 			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
 		},
 		{
-			"Icon": "actions/assets/kneeling",
-			"Name": "Kneeling/Lifting Control",
-			"Controllers": [
-				"Keypad"
-			],
+			"Icon": "actions/assets/Category",
+			"Name": "━━━ ❄️ KOMFORT ━━━",
 			"States": [
 				{
-					"Image": "actions/assets/kneeling"
+					"Image": "actions/assets/Category",
+					"TitleAlignment": "middle"
 				}
 			],
-			"Tooltip": "Controls kneeling and lifting functions.",
-			"UUID": "de.blackmautz.telemetry.all.kneelinglift",
-			"PropertyInspectorPath": "actions/property-inspector/kneelingliftinspector.html"
+			"Tooltip": "Category Header - KOMFORT",
+			"UUID": "de.blackmautz.telemetry.all.header.comfort"
 		},
 		{
 			"Icon": "actions/assets/sonderzeichen18",
@@ -295,6 +456,32 @@
 			"PropertyInspectorPath": "actions/property-inspector/windowcontrolinspector.html"
 		},
 		{
+			"Icon": "actions/assets/Icon_Button_Off",
+			"Name": "Reading Light Clearance (VDL)",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Button_Off"
+				},
+				{
+					"Image": "actions/assets/Icon_Button_On"
+				}
+			],
+			"Tooltip": "Toggle reading light clearance - allows passengers to use individual reading lights (VDL Citea LLE only).",
+			"UUID": "de.blackmautz.telemetry.all.readinglight"
+		},
+		{
+			"Icon": "actions/assets/Category",
+			"Name": "━━━ ⚡ ELEKTRO ━━━",
+			"States": [
+				{
+					"Image": "actions/assets/Category",
+					"TitleAlignment": "middle"
+				}
+			],
+			"Tooltip": "Category Header - ELEKTRO",
+			"UUID": "de.blackmautz.telemetry.all.header.electric"
+		},
+		{
 			"Icon": "actions/assets/Icon_Custom",
 			"Name": "Pantograph On",
 			"Controllers": [
@@ -325,38 +512,20 @@
 			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
 		},
 		{
-			"Icon": "actions/assets/view-next-camera",
-			"Name": "Camera Switch",
-			"Controllers": [
-				"Keypad"
-			],
+			"Icon": "actions/assets/Category",
+			"Name": "━━━ ℹ️ DISPLAYS ━━━",
 			"States": [
 				{
-					"Image": "actions/assets/view-next-camera"
+					"Image": "actions/assets/Category",
+					"TitleAlignment": "middle"
 				}
 			],
-			"Tooltip": "Switches camera view.",
-			"UUID": "de.blackmautz.telemetry.all.cameraswitch",
-			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
-		},
-		{
-			"Icon": "actions/assets/USB",
-			"Name": "USB Clearance",
-			"Controllers": [
-				"Keypad"
-			],
-			"States": [
-				{
-					"Image": "actions/assets/USB"
-				}
-			],
-			"Tooltip": "Toggles USB clearance.",
-			"UUID": "de.blackmautz.telemetry.all.usbclearance",
-			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+			"Tooltip": "Category Header - DISPLAYS",
+			"UUID": "de.blackmautz.telemetry.all.header.displays"
 		},
 		{
 			"Icon": "actions/assets/sonderzeichen18",
-			"Name": "Infos",
+			"Name": "Engine Info",
 			"Controllers": [
 				"Keypad"
 			],
@@ -365,9 +534,24 @@
 					"Image": "actions/assets/sonderzeichen18"
 				}
 			],
-			"Tooltip": "Displays window heating, mirror heating, and stop request status.",
-			"UUID": "de.blackmautz.telemetry.all.infos",
-			"PropertyInspectorPath": "actions/property-inspector/infosinspector.html"
+			"Tooltip": "Displays engine and driving information.",
+			"UUID": "de.blackmautz.telemetry.all.engineinfo",
+			"PropertyInspectorPath": "actions/property-inspector/engineinspector.html"
+		},
+		{
+			"Icon": "actions/assets/sonderzeichen18",
+			"Name": "Speed Display",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/sonderzeichen18"
+				}
+			],
+			"Tooltip": "Displays current speed and allowed speed.",
+			"UUID": "de.blackmautz.telemetry.all.speeddisplay",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
 		},
 		{
 			"Icon": "actions/assets/sonderzeichen18",
@@ -401,7 +585,7 @@
 		},
 		{
 			"Icon": "actions/assets/sonderzeichen18",
-			"Name": "Engine Info",
+			"Name": "Infos",
 			"Controllers": [
 				"Keypad"
 			],
@@ -410,58 +594,13 @@
 					"Image": "actions/assets/sonderzeichen18"
 				}
 			],
-			"Tooltip": "Displays engine and driving information.",
-			"UUID": "de.blackmautz.telemetry.all.engineinfo",
-			"PropertyInspectorPath": "actions/property-inspector/engineinspector.html"
-		},
-		{
-			"Icon": "actions/assets/sonderzeichen18",
-			"Name": "Speed Display",
-			"Controllers": [
-				"Keypad"
-			],
-			"States": [
-				{
-					"Image": "actions/assets/sonderzeichen18"
-				}
-			],
-			"Tooltip": "Displays current speed and allowed speed.",
-			"UUID": "de.blackmautz.telemetry.all.speeddisplay",
-			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
-		},
-		{
-			"Icon": "actions/assets/Haltestelle_wheelchair",
-			"Name": "Wheelchair Request",
-			"Controllers": [
-				"Keypad"
-			],
-			"States": [
-				{
-					"Image": "actions/assets/Haltestelle_wheelchair"
-				}
-			],
-			"Tooltip": "Sends wheelchair request.",
-			"UUID": "de.blackmautz.telemetry.all.wheelchairrequest",
-			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
-		},
-		{
-			"Icon": "actions/assets/Haltestelle",
-			"Name": "Stop Request",
-			"Controllers": [
-				"Keypad"
-			],
-			"States": [
-				{
-					"Image": "actions/assets/Haltestelle"
-				}
-			],
-			"Tooltip": "Displays stop request status.",
-			"UUID": "de.blackmautz.telemetry.all.stoprequest",
-			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+			"Tooltip": "Displays window heating, mirror heating, and stop request status.",
+			"UUID": "de.blackmautz.telemetry.all.infos",
+			"PropertyInspectorPath": "actions/property-inspector/infosinspector.html"
 		},
 		{
 			"Icon": "actions/assets/Icon_Button_Off",
-			"Name": "LED Monitor",
+			"Name": "LED Monitor (experimental/untested)",
 			"Controllers": [
 				"Keypad"
 			],
@@ -470,63 +609,72 @@
 					"Image": "actions/assets/Icon_Button_Off"
 				}
 			],
-			"Tooltip": "Monitor any LED status from the bus.",
+			"Tooltip": "Monitor bus LEDs (experimental/untested)",
 			"UUID": "de.blackmautz.telemetry.all.ledmonitor",
 			"PropertyInspectorPath": "actions/property-inspector/ledmonitorinspector.html"
 		},
 		{
-			"Icon": "actions/assets/InteriorLight_Off_v2",
-			"Name": "Interior Light Control",
+			"Icon": "actions/assets/Category",
+			"Name": "━━━ 💰 TICKETING ━━━",
 			"States": [
 				{
-					"Image": "actions/assets/InteriorLight_Off_v2"
+					"Image": "actions/assets/Category",
+					"TitleAlignment": "middle"
 				}
 			],
-			"Tooltip": "Universal interior light control - auto-detects bus type (Solaris/Mercedes/VDL/Scania/MAN). Modes: Off/Dim/Full/Left/Right.",
-			"UUID": "de.blackmautz.telemetry.all.interiorlightv2",
-			"PropertyInspectorPath": "actions/property-inspector/interiorlightinspector.html"
+			"Tooltip": "Category Header - TICKETING",
+			"UUID": "de.blackmautz.telemetry.all.header.ticketing"
 		},
 		{
-			"Icon": "actions/assets/Icon_Button_Off",
-			"Name": "Reading Light Clearance (VDL)",
+			"Icon": "actions/assets/Icon_Coin",
+			"Name": "Cash Change Button",
 			"States": [
 				{
-					"Image": "actions/assets/Icon_Button_Off"
-				},
-				{
-					"Image": "actions/assets/Icon_Button_On"
+					"Image": "actions/assets/Icon_Coin"
 				}
 			],
-			"Tooltip": "Toggle reading light clearance - allows passengers to use individual reading lights (VDL Citea LLE only).",
-			"UUID": "de.blackmautz.telemetry.all.readinglight"
+			"Tooltip": "Controls the cash system.",
+			"UUID": "de.blackmautz.telemetry.all.changeaction",
+			"PropertyInspectorPath": "actions/property-inspector/changebuttoninspector.html"
 		},
 		{
-			"Icon": "actions/assets/Icon_Button_Off",
-			"Name": "Retarder Toggle",
+			"Icon": "actions/assets/Icon_SaleStatus",
+			"Name": "Ticket Sale Status",
 			"States": [
 				{
-					"Image": "actions/assets/Icon_Button_Off"
-				},
-				{
-					"Image": "actions/assets/Icon_Button_On"
+					"Image": "actions/assets/Icon_SaleStatus"
 				}
 			],
-			"Tooltip": "Toggle retarder (engine brake) on/off.",
-			"UUID": "de.blackmautz.telemetry.all.retarder"
+			"Tooltip": "Displays the Current Cash payment Status",
+			"UUID": "de.blackmautz.telemetry.all.paymentstatus",
+			"PropertyInspectorPath": "actions/property-inspector/paymentstatusinspector.html"
 		},
 		{
-			"Icon": "actions/assets/Icon_Button_Off",
-			"Name": "Traction Control (ASR)",
+			"Icon": "actions/assets/Category",
+			"Name": "━━━ 🛠️ ERWEITERT ━━━",
 			"States": [
 				{
-					"Image": "actions/assets/Icon_Button_Off"
-				},
-				{
-					"Image": "actions/assets/Icon_Button_On"
+					"Image": "actions/assets/Category",
+					"TitleAlignment": "middle"
 				}
 			],
-			"Tooltip": "Toggle traction control (ASR) on/off.",
-			"UUID": "de.blackmautz.telemetry.all.tractioncontrol"
+			"Tooltip": "Category Header - ERWEITERT",
+			"UUID": "de.blackmautz.telemetry.all.header.advanced"
+		},
+		{
+			"Icon": "actions/assets/USB",
+			"Name": "USB Clearance",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/USB"
+				}
+			],
+			"Tooltip": "Toggles USB clearance.",
+			"UUID": "de.blackmautz.telemetry.all.usbclearance",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
 		},
 		{
 			"Icon": "actions/assets/Icon_Button_Off",
@@ -543,56 +691,52 @@
 			"UUID": "de.blackmautz.telemetry.all.rbl"
 		},
 		{
-			"Icon": "actions/assets/Icon_Headlight_Off",
-			"Name": "Light Switch",
-			"Controllers": [
-				"Keypad"
-			],
+			"Icon": "actions/assets/Category",
+			"Name": "━━━ ⚙️ CUSTOM ━━━",
 			"States": [
 				{
-					"Image": "actions/assets/Icon_Headlight_Off",
-					"Name": "Off"
-				},
-				{
-					"Image": "actions/assets/Icon_Headlight_On",
-					"Name": "On"
+					"Image": "actions/assets/Category",
+					"TitleAlignment": "middle"
 				}
 			],
-			"Tooltip": "Controls the main light switch (Off/Parking/Headlights/High Beam/Fog Front/Fog Rear).",
-			"UUID": "de.blackmautz.telemetry.all.lightswitchv2",
-			"PropertyInspectorPath": "actions/property-inspector/lightswitchinspector.html"
+			"Tooltip": "Category Header - CUSTOM",
+			"UUID": "de.blackmautz.telemetry.all.header.custom"
 		},
 		{
-			"Icon": "actions/assets/Icon_Headlight_Off",
-			"Name": "Scania Fog Lights",
-			"Controllers": [
-				"Keypad"
-			],
+			"Icon": "actions/assets/Icon_Custom",
+			"Name": "Custom Action",
 			"States": [
 				{
-					"Image": "actions/assets/Icon_Headlight_Off"
+					"Image": "actions/assets/Icon_Custom"
 				}
 			],
-			"Tooltip": "Controls Scania-specific fog lights (Front/Rear). Interior Lights moved to 'Interior Light Control' button.",
-			"UUID": "de.blackmautz.telemetry.all.scaniafoglights",
-			"PropertyInspectorPath": "actions/property-inspector/scaniafoglightsinspector.html"
+			"Tooltip": "Executes Custom Commands",
+			"UUID": "de.blackmautz.telemetry.all.customaction",
+			"PropertyInspectorPath": "actions/property-inspector/customactioninspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Custom",
+			"Name": "Bus Start Options ( TML Custom Start Button )",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Custom"
+				}
+			],
+			"Tooltip": "BusStartOptions",
+			"UUID": "de.blackmautz.telemetry.all.start",
+			"PropertyInspectorPath": "actions/property-inspector/startbuttoninspector.html"
 		},
 		{
 			"Icon": "actions/assets/Icon_Button_Off",
-			"Name": "Driver Light",
-			"Controllers": [
-				"Keypad"
-			],
+			"Name": "ALL Button ( TML Custom Button )",
 			"States": [
 				{
 					"Image": "actions/assets/Icon_Button_Off"
-				},
-				{
-					"Image": "actions/assets/Icon_Button_On"
 				}
 			],
-			"Tooltip": "Toggle driver's cabin light. Works on all buses.",
-			"UUID": "de.blackmautz.telemetry.all.driverlight"
+			"Tooltip": "Custom Button or Switch with feedback",
+			"UUID": "de.blackmautz.telemetry.all.custombutton",
+			"PropertyInspectorPath": "actions/property-inspector/custombuttoninspector.html"
 		}
 	]
 }

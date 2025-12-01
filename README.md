@@ -19,14 +19,14 @@
 
 **Ein Stream Deck Plugin für ALLE Busse in The Bus!**
 
-Unterstützt **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide** UND **VDL Citea LLE** mit allen Features in einem Plugin!
+Unterstützt **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide**, **VDL Citea LLE** UND **MAN Lion's City** mit allen Features in einem Plugin!
 
-**Version 2.0.4** - Alle Funktionen getestet und funktionsfähig in allen vier Bussen!
+**Version 2.31.19** - Alle Funktionen getestet und funktionsfähig in allen fünf Bussen!
 
 ## 📥 Installation & Updates
 
 ### Installation
-1. **[Download v2.0.4](https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom/releases)** - Neueste `.streamDeckPlugin` Datei
+1. **[Download v2.31.19](https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom/releases)** - Neueste `.streamDeckPlugin` Datei
 2. **Doppelklick** auf die Datei
 3. **Fertig!** Stream Deck installiert automatisch
 
@@ -38,9 +38,25 @@ Klicke oben rechts auf **"Watch"** → **"Custom"** → **"Releases"** ✅
 
 ## 🎮 Alle Features auf einen Blick
 
-**45 Buttons mit über 100+ einzelnen Funktionen!**
+**51 Actions: 11 Category Headers + 40 Funktionale Buttons mit über 100+ Optionen!**
 
-### 🚪 Türsteuerung (5 Buttons)
+### 📋 Neue Kategorisierung (v2.31.19)
+Alle Buttons sind jetzt übersichtlich in Kategorien organisiert mit visuellen Trennern:
+
+- 📡 **SYSTEM** - Telemetrie-Verbindungsstatus
+- 🚗 **MOTOR** - Zündung, Gang, Retarder, ASR
+- 🚪 **TÜREN** - Türsteuerung, Kneeling, Rollstuhlrampe
+- 🚦 **LICHTER** - Alle Beleuchtungsoptionen
+- 🔊 **BEDIENUNG** - Hupe, Fernlicht, Scheibenwischer, Kamera
+- 🛑 **BREMSEN** - Feststellbremse, Haltestellenbremse
+- ❄️ **KOMFORT** - Klima, Fenster, Leselampen
+- ⚡ **ELEKTRO** - Pantograph (Stromabnehmer)
+- ℹ️ **DISPLAYS** - Motor-Info, Geschwindigkeit, Kraftstoff, Passagiere, LED-Monitor
+- 💰 **TICKETING** - Kassensystem, Zahlungsstatus
+- 🛠️ **ERWEITERT** - USB-Freigabe, RBL (Ampel-Vorrang)
+- ⚙️ **CUSTOM** - Custom Actions, Bus-Start-Optionen
+
+### 🚪 Türsteuerung (4 Buttons)
 - **Door 1-4** - Einzelne Türen öffnen/schließen mit Lock-Funktion
   - 📊 Door Progress Display (zeigt Öffnung in %, Scania: 0-100%, andere: 0%/100%)
 - **Change Door** - 6 Optionen:

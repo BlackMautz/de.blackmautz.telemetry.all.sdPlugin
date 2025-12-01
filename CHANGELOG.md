@@ -2,6 +2,34 @@
 
 All notable changes to the Universal Edition will be documented in this file.
 
+## [2.31.19] - 2025-12-01
+
+### 🎨 UI/UX Improvements - Complete Action Reorganization
+
+#### Changed
+- ✨ **51 Total Actions** - 11 Category Headers + 40 Functional Buttons
+- 📋 **Category Headers with Visual Separators** - Format: ━━━ 📡 EMOJI CATEGORY ━━━
+  - 📡 SYSTEM (1 button)
+  - 🚗 MOTOR (4 buttons)
+  - 🚪 TÜREN (4 buttons)
+  - 🚦 LICHTER (6 buttons)
+  - 🔊 BEDIENUNG (5 buttons)
+  - 🛑 BREMSEN (2 buttons)
+  - ❄️ KOMFORT (3 buttons)
+  - ⚡ ELEKTRO (2 buttons)
+  - ℹ️ DISPLAYS (6 buttons)
+  - 💰 TICKETING (2 buttons)
+  - 🛠️ ERWEITERT (2 buttons)
+  - ⚙️ CUSTOM (3 buttons)
+- 🏷️ **LED Monitor** - Marked as "(experimental/untested)" - 60+ LED monitoring options available but untested
+- 📝 **Improved Tooltips** - Clearer descriptions for all buttons
+- 🎯 **Logical Grouping** - All buttons organized by function for easier navigation
+
+#### Technical
+- ✅ Category header UUIDs: `de.blackmautz.telemetry.all.header.{system|motor|doors|lights|controls|brakes|comfort|electric|displays|ticketing|advanced|custom}`
+- ✅ All 40 functional buttons preserved from previous versions
+- ✅ Maintained backward compatibility - all UUIDs unchanged
+
 ## [2.0.4] - 2025-11-29
 
 ### 🚀 VDL Extended Features & Universal Enhancements

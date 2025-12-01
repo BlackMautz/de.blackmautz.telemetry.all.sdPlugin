@@ -1,0 +1,598 @@
+{
+	"SDKVersion": 2,
+	"Author": "TML Studios - Edit by BlackMautz",
+	"CodePath": "app.html",
+	"Description": "Control The Bus with your StreamDeck! ALL Edition (Solaris, Mercedes, Scania, VDL & MAN)",
+	"Name": "BlackMautz TML Telemetry - ALL",
+	"Icon": "actions/assets/Category",
+	"URL": "https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom_Solaris",
+	"Version": "2.31.15.0",
+	"UUID": "de.blackmautz.telemetry.all",
+	"Software": {
+		"MinimumVersion": "6.4"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "10.11"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Category": "BlackMautz TML Telemetry - ALL",
+	"CategoryIcon": "actions/assets/Category",
+	"Actions": [
+		{
+			"Icon": "actions/assets/Icon_Button_Off",
+			"Name": "Door Button",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Button_Off"
+				}
+			],
+			"Tooltip": "Controls the passenger doors.",
+			"UUID": "de.blackmautz.telemetry.all.dooraction",
+			"PropertyInspectorPath": "actions/property-inspector/doorbuttoninspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Connected",
+			"Name": "Connection Status",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Connected"
+				}
+			],
+			"Tooltip": "Telemetry Connection Status Display",
+			"UUID": "de.blackmautz.telemetry.all.constatus",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/InteriorLight_Off_v2",
+			"Name": "Interior Light Control",
+			"States": [
+				{
+					"Image": "actions/assets/InteriorLight_Off_v2"
+				}
+			],
+			"Tooltip": "Universal interior light control - auto-detects bus type (Solaris/Mercedes/VDL/Scania/MAN). Modes: Off/Dim/Full/Left/Right.",
+			"UUID": "de.blackmautz.telemetry.all.interiorlightv2",
+			"PropertyInspectorPath": "actions/property-inspector/interiorlightinspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Coin",
+			"Name": "Cash Change Button",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Coin"
+				}
+			],
+			"Tooltip": "Controls the cash system.",
+			"UUID": "de.blackmautz.telemetry.all.changeaction",
+			"PropertyInspectorPath": "actions/property-inspector/changebuttoninspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_N_Normal",
+			"Name": "Gear Selector",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_N_Normal"
+				}
+			],
+			"Tooltip": "Controls the Gear Selector.",
+			"UUID": "de.blackmautz.telemetry.all.gearselect",
+			"PropertyInspectorPath": "actions/property-inspector/gearselectinspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Ignition",
+			"Name": "Ignition Control",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Ignition"
+				}
+			],
+			"Tooltip": "Controls the Ignition.",
+			"UUID": "de.blackmautz.telemetry.all.ignition",
+			"PropertyInspectorPath": "actions/property-inspector/ignitioninspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Custom",
+			"Name": "Custom Action",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Custom"
+				}
+			],
+			"Tooltip": "Executes Custom Commands",
+			"UUID": "de.blackmautz.telemetry.all.customaction",
+			"PropertyInspectorPath": "actions/property-inspector/customactioninspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_SaleStatus",
+			"Name": "Ticket Sale Status",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_SaleStatus"
+				}
+			],
+			"Tooltip": "Displays the Current Cash payment Status",
+			"UUID": "de.blackmautz.telemetry.all.paymentstatus",
+			"PropertyInspectorPath": "actions/property-inspector/paymentstatusinspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Custom",
+			"Name": "Bus Start Options ( TML Custom Start Button )",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Custom"
+				}
+			],
+			"Tooltip": "BusStartOptions",
+			"UUID": "de.blackmautz.telemetry.all.start",
+			"PropertyInspectorPath": "actions/property-inspector/startbuttoninspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Indicator",
+			"Name": "Indicator Control",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Indicator"
+				}
+			],
+			"Tooltip": "Controls Indicators and Warning Lights",
+			"UUID": "de.blackmautz.telemetry.all.indicatorcontrol",
+			"PropertyInspectorPath": "actions/property-inspector/indicatorcontrolinspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Button_Off",
+			"Name": "ALL Button ( TML Custom Button )",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Button_Off"
+				}
+			],
+			"Tooltip": "Custom Button or Switch with feedback",
+			"UUID": "de.blackmautz.telemetry.all.custombutton",
+			"PropertyInspectorPath": "actions/property-inspector/custombuttoninspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Headlight_Off",
+			"Name": "Light Control (Solaris)",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Headlight_Off"
+				}
+			],
+			"Tooltip": "Controls various lights on the bus.",
+			"UUID": "de.blackmautz.telemetry.all.lightcontrol",
+			"PropertyInspectorPath": "actions/property-inspector/lightcontrolinspector.html"
+		},
+		{
+			"Icon": "actions/assets/wiper",
+			"Name": "Wiper Up",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/wiper"
+				}
+			],
+			"Tooltip": "Increases wiper level.",
+			"UUID": "de.blackmautz.telemetry.all.wiperup",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/wiper",
+			"Name": "Wiper Down",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/wiper"
+				}
+			],
+			"Tooltip": "Decreases wiper level.",
+			"UUID": "de.blackmautz.telemetry.all.wiperdown",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/air-horn",
+			"Name": "Horn",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/air-horn"
+				}
+			],
+			"Tooltip": "Activates the horn.",
+			"UUID": "de.blackmautz.telemetry.all.horn",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/passing",
+			"Name": "High Beam Flasher",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/passing"
+				}
+			],
+			"Tooltip": "High beam flasher (hold to activate).",
+			"UUID": "de.blackmautz.telemetry.all.highbeamflasher",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Brake_Off",
+			"Name": "Fixing Brake",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Brake_Off"
+				}
+			],
+			"Tooltip": "Toggles the fixing/parking brake (press to activate, release to deactivate).",
+			"UUID": "de.blackmautz.telemetry.all.fixingbraketoggle",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/HaltestelleBremse",
+			"Name": "Stop Brake",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/HaltestelleBremse"
+				}
+			],
+			"Tooltip": "Toggles the stop brake.",
+			"UUID": "de.blackmautz.telemetry.all.stopbrake",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/kneeling",
+			"Name": "Kneeling/Lifting Control",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/kneeling"
+				}
+			],
+			"Tooltip": "Controls kneeling and lifting functions.",
+			"UUID": "de.blackmautz.telemetry.all.kneelinglift",
+			"PropertyInspectorPath": "actions/property-inspector/kneelingliftinspector.html"
+		},
+		{
+			"Icon": "actions/assets/sonderzeichen18",
+			"Name": "Climate Control",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/sonderzeichen18"
+				}
+			],
+			"Tooltip": "Controls air conditioning and climate functions.",
+			"UUID": "de.blackmautz.telemetry.all.climatecontrol",
+			"PropertyInspectorPath": "actions/property-inspector/climatecontrolinspector.html"
+		},
+		{
+			"Icon": "actions/assets/window-left-up",
+			"Name": "Window Control",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/window-left-up"
+				}
+			],
+			"Tooltip": "Controls windows and shades.",
+			"UUID": "de.blackmautz.telemetry.all.windowcontrol",
+			"PropertyInspectorPath": "actions/property-inspector/windowcontrolinspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Custom",
+			"Name": "Pantograph On",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Custom"
+				}
+			],
+			"Tooltip": "Activates the pantograph.",
+			"UUID": "de.blackmautz.telemetry.all.pantographon",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Custom",
+			"Name": "Pantograph Off",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Custom"
+				}
+			],
+			"Tooltip": "Deactivates the pantograph.",
+			"UUID": "de.blackmautz.telemetry.all.pantographoff",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/view-next-camera",
+			"Name": "Camera Switch",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/view-next-camera"
+				}
+			],
+			"Tooltip": "Switches camera view.",
+			"UUID": "de.blackmautz.telemetry.all.cameraswitch",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/USB",
+			"Name": "USB Clearance",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/USB"
+				}
+			],
+			"Tooltip": "Toggles USB clearance.",
+			"UUID": "de.blackmautz.telemetry.all.usbclearance",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/sonderzeichen18",
+			"Name": "Infos",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/sonderzeichen18"
+				}
+			],
+			"Tooltip": "Displays window heating, mirror heating, and stop request status.",
+			"UUID": "de.blackmautz.telemetry.all.infos",
+			"PropertyInspectorPath": "actions/property-inspector/infosinspector.html"
+		},
+		{
+			"Icon": "actions/assets/sonderzeichen18",
+			"Name": "Fuel Display",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/sonderzeichen18"
+				}
+			],
+			"Tooltip": "Displays fuel level, percentage, and low fuel warning.",
+			"UUID": "de.blackmautz.telemetry.all.fuel",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/sonderzeichen18",
+			"Name": "Passengers",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/sonderzeichen18"
+				}
+			],
+			"Tooltip": "Displays passenger and door information.",
+			"UUID": "de.blackmautz.telemetry.all.passengers",
+			"PropertyInspectorPath": "actions/property-inspector/passengersinspector.html"
+		},
+		{
+			"Icon": "actions/assets/sonderzeichen18",
+			"Name": "Engine Info",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/sonderzeichen18"
+				}
+			],
+			"Tooltip": "Displays engine and driving information.",
+			"UUID": "de.blackmautz.telemetry.all.engineinfo",
+			"PropertyInspectorPath": "actions/property-inspector/engineinspector.html"
+		},
+		{
+			"Icon": "actions/assets/sonderzeichen18",
+			"Name": "Speed Display",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/sonderzeichen18"
+				}
+			],
+			"Tooltip": "Displays current speed and allowed speed.",
+			"UUID": "de.blackmautz.telemetry.all.speeddisplay",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/Haltestelle_wheelchair",
+			"Name": "Wheelchair Request",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/Haltestelle_wheelchair"
+				}
+			],
+			"Tooltip": "Sends wheelchair request.",
+			"UUID": "de.blackmautz.telemetry.all.wheelchairrequest",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/Haltestelle",
+			"Name": "Stop Request",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/Haltestelle"
+				}
+			],
+			"Tooltip": "Displays stop request status.",
+			"UUID": "de.blackmautz.telemetry.all.stoprequest",
+			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Button_Off",
+			"Name": "LED Monitor",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Button_Off"
+				}
+			],
+			"Tooltip": "Monitor any LED status from the bus.",
+			"UUID": "de.blackmautz.telemetry.all.ledmonitor",
+			"PropertyInspectorPath": "actions/property-inspector/ledmonitorinspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Button_Off",
+			"Name": "Reading Light Clearance (VDL)",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Button_Off"
+				},
+				{
+					"Image": "actions/assets/Icon_Button_On"
+				}
+			],
+			"Tooltip": "Toggle reading light clearance - allows passengers to use individual reading lights (VDL Citea LLE only).",
+			"UUID": "de.blackmautz.telemetry.all.readinglight"
+		},
+		{
+			"Icon": "actions/assets/Icon_Button_Off",
+			"Name": "Retarder Toggle",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Button_Off"
+				},
+				{
+					"Image": "actions/assets/Icon_Button_On"
+				}
+			],
+			"Tooltip": "Toggle retarder (engine brake) on/off.",
+			"UUID": "de.blackmautz.telemetry.all.retarder"
+		},
+		{
+			"Icon": "actions/assets/Icon_Button_Off",
+			"Name": "Traction Control (ASR)",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Button_Off"
+				},
+				{
+					"Image": "actions/assets/Icon_Button_On"
+				}
+			],
+			"Tooltip": "Toggle traction control (ASR) on/off.",
+			"UUID": "de.blackmautz.telemetry.all.tractioncontrol"
+		},
+		{
+			"Icon": "actions/assets/Icon_Button_Off",
+			"Name": "RBL Toggle (Traffic Signal Priority)",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Button_Off"
+				},
+				{
+					"Image": "actions/assets/Icon_Button_On"
+				}
+			],
+			"Tooltip": "RBL (Rechnergesteuertes Betriebsleitsystem) - Computer-controlled traffic signal priority system. Sends signals to traffic lights so the bus gets green lights at intersections. Helps buses move faster through the city without waiting at red lights. Commonly used in Germany/Austria for public transit.",
+			"UUID": "de.blackmautz.telemetry.all.rbl"
+		},
+		{
+			"Icon": "actions/assets/Icon_Headlight_Off",
+			"Name": "Light Switch",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Headlight_Off",
+					"Name": "Off"
+				},
+				{
+					"Image": "actions/assets/Icon_Headlight_On",
+					"Name": "On"
+				}
+			],
+			"Tooltip": "Controls the main light switch (Off/Parking/Headlights/High Beam/Fog Front/Fog Rear).",
+			"UUID": "de.blackmautz.telemetry.all.lightswitchv2",
+			"PropertyInspectorPath": "actions/property-inspector/lightswitchinspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Headlight_Off",
+			"Name": "Scania Fog Lights",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Headlight_Off"
+				}
+			],
+			"Tooltip": "Controls Scania-specific fog lights (Front/Rear). Interior Lights moved to 'Interior Light Control' button.",
+			"UUID": "de.blackmautz.telemetry.all.scaniafoglights",
+			"PropertyInspectorPath": "actions/property-inspector/scaniafoglightsinspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Button_Off",
+			"Name": "Driver Light",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Button_Off"
+				},
+				{
+					"Image": "actions/assets/Icon_Button_On"
+				}
+			],
+			"Tooltip": "Toggle driver's cabin light. Works on all buses.",
+			"UUID": "de.blackmautz.telemetry.all.driverlight"
+		}
+	]
+}
