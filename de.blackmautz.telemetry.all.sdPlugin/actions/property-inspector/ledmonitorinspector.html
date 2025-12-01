@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta
+		  name="viewport"
+		  content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<title>de.tml-studios.telemetry LED Monitor Property Inspector</title>
+	<link rel="stylesheet" href="../../libs/css/sdpi.css" />
+</head>
+
+<body>
+	<!-- Global Settings -->
+	<div class="sdpi-wrapper">
+		<form id="property-inspector-global">
+			<div class="sdpi-item">
+				<div data-localize class="sdpi-item-label" title="TargetIp">Target IP</div>
+				<input id="TargetIp" data-localize class="sdpi-item-value" name="TargetIp" type="text" value="" placeholder="127.0.0.1" />
+			</div>
+			<div class="sdpi-item">
+				<div data-localize class="sdpi-item-label" title="TargetPort">Target Port</div>
+				<input id="TargetPort" data-localize class="sdpi-item-value" name="TargetPort" type="text" value="37337"/>
+			</div>
+		</form>
+		<div class="sdpi-item" type="line"></div>
+		<!-- Local Settings -->
+		<form id="property-inspector-local">
+			<div class="sdpi-item">
+				<div class="sdpi-item-label">LED Selection</div>
+				<select class="sdpi-item-value select" id="LEDSelect" name="LEDSelect">
+				<optgroup label="Dashboard LEDs">
+					<option value="Dashboard Brake Assist">Brake Assist (Bremsassistent)</option>
+					<option value="Dashboard Differential">Differential</option>
+					<option value="Dashboard Door 2">Door 2 (Tür 2 Warnung)</option>
+					<option value="Dashboard Engine">Engine (Motor Warnung)</option>
+					<option value="Dashboard Fixing Brake">Fixing Brake (Feststellbremse)</option>
+					<option value="Dashboard Fog Light">Fog Light (Nebelscheinwerfer)</option>
+					<option value="Dashboard Indicator Right">Indicator Right (Blinker rechts)</option>
+					<option value="Dashboard Lifting">Lifting (Anhebung Warnung)</option>
+					<option value="Dashboard Load Transfer">Load Transfer (Lastübertragung)</option>
+					<option value="Dashboard Retarder">Retarder</option>
+					<option value="Dashboard Seatbelts">Seatbelts (Sicherheitsgurte)</option>
+					<option value="Dashboard Turning">Turning (Kurvenfahrt)</option>
+					<option value="DB Dot">Dashboard Dot</option>
+					<option value="DB Parkbrake">Parkbrake</option>
+					<option value="DB Warning Light">Warning Light (Warnleuchte)</option>
+				</optgroup>
+				<optgroup label="Door LEDs">
+					<option value="Door 1 Light">Door 1 Status</option>
+					<option value="Door 2 Light">Door 2 Status</option>
+					<option value="Door 3 Light">Door 3 Status</option>
+					<option value="Door 4 Light">Door 4 Status</option>
+					<option value="Door Button 1">Door Button 1</option>
+					<option value="Door Button 2">Door Button 2</option>
+					<option value="Door Button 3">Door Button 3</option>
+					<option value="Door Button 4">Door Button 4</option>
+					<option value="DoorClearanceButton">Door Clearance Button</option>
+					<option value="Second Door Light Ext">Door 2 External Light</option>
+					<option value="Third Door Light Ext">Door 3 External Light</option>
+					<option value="Fourth Door Light Ext">Door 4 External Light</option>
+				</optgroup>
+				<optgroup label="Lighting LEDs">
+					<option value="Driver Light">Driver Light (Fahrerlicht)</option>
+					<option value="HeadLight Beam On">Headlight Beam (Fernlicht)</option>
+					<option value="High Beam Flasher">High Beam Flasher (Lichthupe)</option>
+					<option value="Indicator Buzzer">Indicator Buzzer (Blinker-Summer)</option>
+					<option value="Indicator Left">Indicator Left (Blinker links)</option>
+					<option value="Indicator Right">Indicator Right (Blinker rechts)</option>
+					<option value="LED Blinker L">LED Blinker Left</option>
+					<option value="LED Blinker R">LED Blinker Right</option>
+					<option value="LED FixingBrake">LED Fixing Brake</option>
+					<option value="LED Headlight">LED Headlight</option>
+					<option value="LED Interior Light">LED Interior Light</option>
+					<option value="LED Kneeling">LED Kneeling</option>
+					<option value="LED Main Light">LED Main Light</option>
+					<option value="LED Warning">LED Warning</option>
+					<option value="Main Beam">Main Beam (Hauptlicht-Strahl)</option>
+				</optgroup>
+				<optgroup label="Other LEDs">
+					<option value="CameraButtonLED">Camera Button LED</option>
+					<option value="FourthDoorRequest">Door 4 Request (Tür 4 Anfrage)</option>
+					<option value="GPS LED">GPS LED</option>
+					<option value="LED Clearance">LED Clearance (Türfreigabe)</option>
+					<option value="LED Door1Lock">LED Door 1 Lock</option>
+					<option value="LED Door2Lock">LED Door 2 Lock</option>
+					<option value="LED SecondStopBrake">LED Second Stop Brake</option>
+					<option value="LED StopBrake">LED Stop Brake</option>
+					<option value="SecondDoorRequest">Door 2 Request (Tür 2 Anfrage)</option>
+					<option value="ThirdDoorRequest">Door 3 Request (Tür 3 Anfrage)</option>
+				</optgroup>
+			</select>
+		</div>
+		</form>
+	</div>
+
+	<div class="sdpi-info-label hidden" style="top: -1000;" value=""></div>
+	<script src="../../libs/js/constants.js"></script>
+	<script src="../../libs/js/prototypes.js"></script>
+	<script src="../../libs/js/timers.js"></script>
+	<script src="../../libs/js/utils.js"></script>
+	<script src="../../libs/js/events.js"></script>
+	<script src="../../libs/js/api.js"></script>
+	<script src="../../libs/js/property-inspector.js"></script>
+	<script src="../../libs/js/dynamic-styles.js"></script>
+
+	<script>
+
+		$PI.onConnected((jsn) => {
+			const formGlobal = document.querySelector('#property-inspector-global');
+			const formLocal = document.querySelector('#property-inspector-local');
+			const {actionInfo, appInfo, connection, messageType, port, uuid} = jsn;
+			const {payload, context} = actionInfo;
+			const {settings} = payload;
+
+			Utils.setFormValue(settings, formLocal);
+
+			$PI.getGlobalSettings();
+
+			formGlobal.addEventListener('input', Utils.debounce(150, () => {
+				const value = Utils.getFormValue(formGlobal);
+				console.log('SetGlobalSettings', value);
+				$PI.setGlobalSettings(value);
+			}));
+
+			formLocal.addEventListener('input', Utils.debounce(150, () => {
+				const value = Utils.getFormValue(formLocal);
+				$PI.setSettings(value);
+			}));
+		});
+
+		$PI.onDidReceiveGlobalSettings(({payload}) => {
+			console.log('onDidReceiveGlobalSettings', payload);
+			document.getElementById("TargetIp").value = payload.settings.TargetIp;
+			document.getElementById("TargetPort").value = payload.settings.TargetPort;
+		});
+
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>de.tml-studios.telemetry Climate Control Property Inspector</title>
+    <link rel="stylesheet" href="../../libs/css/sdpi.css" />
+</head>
+
+<body>
+    <!-- Global Settings -->
+    <div class="sdpi-wrapper">
+        <form id="property-inspector-global">
+            <div class="sdpi-item">
+                <div data-localize class="sdpi-item-label" title="TargetIp">Target IP</div>
+                <input id="TargetIp" data-localize class="sdpi-item-value" name="TargetIp" type="text" value="" placeholder="127.0.0.1" />
+            </div>
+            <div class="sdpi-item">
+                <div data-localize class="sdpi-item-label" title="TargetPort">Target Port</div>
+                <input id="TargetPort" data-localize class="sdpi-item-value" name="TargetPort" type="text" value="37337"/>
+            </div>
+        </form>
+        <div class="sdpi-item" type="line"></div>
+        <!-- Local Settings -->
+        <form id="property-inspector-local">
+            <div class="sdpi-item" id="ClimateSelection">
+                <div class="sdpi-item-label">Select Climate Function</div>
+                <select class="sdpi-item-value select" id="ClimateSelector" name="ClimateSelector">
+                    <option value="Air Condition Toggle">Air Condition Toggle (AC an/aus)</option>
+                    <option value="Temperature Up">Temperature Up (Wärmer)</option>
+                    <option value="Temperature Down">Temperature Down (Kälter)</option>
+                    <option value="Airflow Toggle">Airflow Toggle (Luftstrom an/aus)</option>
+                    <option value="Airflow Left">Airflow Left (Luftstrom Stufe runter)</option>
+                    <option value="Airflow Right">Airflow Right (Luftstrom Stufe hoch)</option>
+                    <option value="Climate Mode">Climate Mode (Klimaanlage starten)</option>
+                    <option value="Fan Speed Display">Fan Speed Display (Lüfter-Geschwindigkeit anzeigen)</option>
+                    <option value="Driver Temp Display">Driver Temp Display (Fahrer-Temperatur anzeigen)</option>
+                    <option value="AC Temp Display">AC Temp Display (Klima-Temperatur anzeigen)</option>
+                </select>
+            </div>
+            <div type="checkbox" class="sdpi-item">
+                <div class="sdpi-item-label">Temperatur-Info anzeigen</div>
+                <div class="sdpi-item-value">
+                    <input id="ShowTemperature" type="checkbox" name="ShowTemperature">
+                    <label for="ShowTemperature" class="sdpi-item-label"><span></span>Temperatur auf Button anzeigen</label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="sdpi-info-label hidden" style="top: -1000;" value=""></div>
+    <script src="../../libs/js/constants.js"></script>
+    <script src="../../libs/js/prototypes.js"></script>
+    <script src="../../libs/js/timers.js"></script>
+    <script src="../../libs/js/utils.js"></script>
+    <script src="../../libs/js/events.js"></script>
+    <script src="../../libs/js/api.js"></script>
+    <script src="../../libs/js/property-inspector.js"></script>
+    <script src="../../libs/js/dynamic-styles.js"></script>
+
+    <script>
+
+        $PI.onConnected((jsn) => {
+            const formGlobal = document.querySelector('#property-inspector-global');
+            const formLocal = document.querySelector('#property-inspector-local');
+            const {actionInfo, appInfo, connection, messageType, port, uuid} = jsn;
+            const {payload, context} = actionInfo;
+            const {settings} = payload;
+
+            Utils.setFormValue(settings, formLocal);
+
+            $PI.getGlobalSettings();
+
+            formGlobal.addEventListener('input', Utils.debounce(150, () => {
+                const value = Utils.getFormValue(formGlobal);
+                console.log('SetGlobalSettings', value);
+                $PI.setGlobalSettings(value);
+            }));
+
+            formLocal.addEventListener('input', Utils.debounce(150, () => {
+                const value = Utils.getFormValue(formLocal);
+                $PI.setSettings(value);
+            }));
+        });
+
+        $PI.onDidReceiveGlobalSettings(({payload}) => {
+            console.log('onDidReceiveGlobalSettings', payload);
+            document.getElementById("TargetIp").value = payload.settings.TargetIp;
+            document.getElementById("TargetPort").value = payload.settings.TargetPort;
+        });
+
+    </script>
+
+</body>
+
+</html>

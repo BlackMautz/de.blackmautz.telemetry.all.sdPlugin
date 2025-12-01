@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../libs/css/sdpi.css">
+</head>
+<body>
+    <div class="sdpi-wrapper">
+        <form id="property-inspector">
+            <div class="sdpi-item">
+                <div class="sdpi-item-label">Light Mode</div>
+                <select class="sdpi-item-value select" id="lightMode" name="lightMode">
+                    <!-- Solaris Options -->
+                    <option value="Off">Off (Solaris)</option>
+                    <option value="Dim">Dim (Solaris)</option>
+                    <option value="Full">Full / Bright (Solaris)</option>
+                    <option value="Left">Left Only (Solaris)</option>
+                    <option value="Right">Right Only (Solaris)</option>
+                    
+                    <!-- Mercedes Options -->
+                    <option value="MercedesToggleBright">Toggle Brighter (Mercedes)</option>
+                    <option value="MercedesToggleDim">Toggle Dimmer (Mercedes)</option>
+                    <option value="MercedesOnOff">On/Off Switch (Mercedes)</option>
+                    
+                    <!-- VDL Options -->
+                    <option value="VDLBright">Hell / Bright (VDL)</option>
+                    <option value="VDLDimmed">Gedimmt / Dim (VDL)</option>
+                    
+                    <!-- Scania Options -->
+                    <option value="FrontDim">Front Dim (Scania)</option>
+                    <option value="FrontFull">Front Full (Scania)</option>
+                    <option value="BackDim">Back Dim (Scania)</option>
+                    <option value="BackFull">Back Full (Scania)</option>
+                    
+                    <!-- MAN Options -->
+                    <option value="MANLowerBright">Lower Deck Hell (MAN)</option>
+                    <option value="MANLowerDimmed">Lower Deck Dim (MAN)</option>
+                    <option value="MANUpperBright">Upper Deck Hell (MAN)</option>
+                    <option value="MANUpperDimmed">Upper Deck Dim (MAN)</option>
+                </select>
+            </div>
+            <div class="sdpi-item">
+                <details class="message info">
+                    <summary>Universal Bus Support</summary>
+                    <p>This button automatically detects your current bus. Select the option for your bus:</p>
+                    <ul>
+                        <li><strong>Solaris:</strong> Off, Dim, Full, Left Only, Right Only</li>
+                        <li><strong>Mercedes:</strong> Toggle Brighter/Dimmer, On/Off Switch</li>
+                        <li><strong>VDL:</strong> Hell (toggles on/off), Dim (toggles on/off)</li>
+                        <li><strong>Scania:</strong> Front/Back Dim/Full (separate control)</li>
+                        <li><strong>MAN:</strong> Lower/Upper Deck Hell/Dim (toggles on/off)</li>
+                    </ul>
+                    <p>Icons reflect actual light status from the game.</p>
+                </details>
+            </div>
+        </form>
+    </div>
+    <script src="../../libs/js/constants.js"></script>
+    <script src="../../libs/js/prototypes.js"></script>
+    <script src="../../libs/js/timers.js"></script>
+    <script src="../../libs/js/utils.js"></script>
+    <script src="../../libs/js/events.js"></script>
+    <script src="../../libs/js/api.js"></script>
+    <script src="../../libs/js/property-inspector.js"></script>
+    <script src="../../libs/js/dynamic-styles.js"></script>
+    <script>
+        $PI.onConnected((jsn) => {
+            const form = document.querySelector('#property-inspector');
+            const {actionInfo} = jsn;
+            const {payload} = actionInfo;
+            const {settings} = payload;
+
+            Utils.setFormValue(settings, form);
+
+            form.addEventListener('input', Utils.debounce(150, () => {
+                const value = Utils.getFormValue(form);
+                $PI.setSettings(value);
+            }));
+        });
+    </script>
+</body>
+</html>
