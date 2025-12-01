@@ -23,6 +23,24 @@ Unterstützt **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide**, **VD
 
 **Version 2.31.24** - Alle Funktionen getestet und funktionsfähig in allen fünf Bussen!
 
+## 📸 Screenshots
+
+### Übersicht
+![Stream Deck Übersicht 1](screenshots/übersicht1.png)
+![Stream Deck Übersicht 2](screenshots/übersicht2.png)
+
+### Funktionen im Detail
+![Türsteuerung](screenshots/doors.png)
+*Türsteuerung mit verschiedenen Optionen*
+
+![Lichtsteuerung](screenshots/lightcontrol.png)
+*Umfassende Lichtsteuerung für alle Busse*
+
+![Innenbeleuchtung](screenshots/interiorlightfull.png)
+*Interior Light Control mit mehreren Modi*
+
+---
+
 ## 📥 Installation & Updates
 
 ### Installation
