@@ -38,10 +38,10 @@ Klicke oben rechts auf **"Watch"** → **"Custom"** → **"Releases"** ✅
 
 ## 🎮 Alle Features auf einen Blick
 
-**51 Actions: 11 Category Headers + 40 Funktionale Buttons mit über 100+ Optionen!**
+**51 Aktionen: 11 Kategorie-Überschriften + 40 Funktionale Schaltflächen mit über 100+ Optionen!**
 
 ### 📋 Neue Kategorisierung (v2.31.19)
-Alle Buttons sind jetzt übersichtlich in Kategorien organisiert mit visuellen Trennern:
+Alle Schaltflächen sind jetzt übersichtlich in Kategorien organisiert mit visuellen Trennern:
 
 - 📡 **SYSTEM** - Telemetrie-Verbindungsstatus
 - 🚗 **MOTOR** - Zündung, Gang, Retarder, ASR
@@ -56,73 +56,57 @@ Alle Buttons sind jetzt übersichtlich in Kategorien organisiert mit visuellen T
 - 🛠️ **ERWEITERT** - USB-Freigabe, RBL (Ampel-Vorrang)
 - ⚙️ **CUSTOM** - Custom Actions, Bus-Start-Optionen
 
-### 🚪 Türsteuerung (4 Buttons)
-- **Door 1-4** - Einzelne Türen öffnen/schließen mit Lock-Funktion
-  - 📊 Door Progress Display (zeigt Öffnung in %, Scania: 0-100%, andere: 0%/100%)
-- **Change Door** - 6 Optionen:
-  - First Door Open/Close
-  - Second Door Open/Close  
-  - Third Door Open/Close
-  - Fourth Door Open/Close
-  - All Doors Open/Close
-  - Automatic Door Closing
+### 🚪 Türsteuerung (4 Schaltflächen)
+- **Door Button** - Türsteuerung mit konfigurierbaren Optionen
+  - 📊 Tür-Fortschrittsanzeige (zeigt Öffnung in %, Scania: 0-100%, andere: 0%/100%)
+  - Einzelne Türen öffnen/schließen mit Verriegelungsfunktion
+- **Kneeling/Lifting Control** - 6 Optionen:
+  - Vorne Anheben
+  - Hinten Anheben
+  - Vorne Absenken
+  - Hinten Absenken
+  - Anheben
+  - Absenken
+- **Wheelchair Request** - Rollstuhlrampen-Anfrage senden
+- **Stop Request** - Haltewunsch-Status anzeigen
 
-### 💰 Kassensystem (2 Buttons)
-- **Payment Status** - Zahlungsstatus-Anzeige
-- **Change Action** - Wechselgeld zurückgeben
+### 💰 Kassensystem (2 Schaltflächen)
+- **Ticket Sale Status** - Zahlungsstatus-Anzeige
+- **Cash Change Button** - Wechselgeld zurückgeben
 
-### ⚙️ Fahrzeugsteuerung (6 Buttons)
-- **Gear Select** - Automatische Gangwahl (D/N/R)
-- **Ignition** - Zündung an/aus
-- **Start Engine** - Motor starten/stoppen
-- **Fixing Brake** - Feststellbremse Toggle
-- **Stop Brake (Mercedes)** - Haltestellenbremse
-- **Wheelchair Ramp** - Rollstuhlrampe aus-/einfahren
+### ⚙️ Fahrzeugsteuerung (4 Schaltflächen)
+- **Gear Selector** - Automatische Gangwahl (D/N/R)
+- **Ignition Control** - Zündung ein/aus
+- **Retarder Toggle** - Motorbremse/Dauerbremse umschalten
+- **Traction Control (ASR)** - Antriebsschlupfregelung umschalten
 
-### 💡 Beleuchtung (7 Buttons mit 40+ Optionen!)
-- **Light Control** - 15+ Licht-Optionen:
-  - Interior Lights On/Off
-  - Side/Rear/Front Lights On/Off
-  - Hazard Lights On/Off
-  - Turn Signals Left/Right On/Off
-  - Fog Lights Front/Rear On/Off
-  - High Beam On/Off
-  - All Lights On/Off
+### 💡 Beleuchtung (6 Schaltflächen mit 40+ Optionen!)
+- **Indicator Control** - Blinkerkontrolle:
+  - Blinker Links/Rechts
+  - Warnblinklicht
 - **Light Switch** - 3-Wege-Schalter mit 6 Positionen:
-  - Nach Rechts schalten: Off → Parking → Headlights → High Beam → Fog Front → Fog Rear
-  - Nach Links schalten (umgekehrt)
+  - Nach rechts schalten: Aus → Standlicht → Abblendlicht → Fernlicht → Nebelscheinwerfer vorne → Nebelscheinwerfer hinten
+  - Nach links schalten (umgekehrt)
   - Status anzeigen
-- **Indicator Control** - 3 Optionen:
-  - Turn Signal Left/Right
-  - Hazard Lights
-- **Scania Lights (Scania)** - 6 Optionen:
-  - Fog Light Front/Rear
-  - Interior Light Front/Back Up (Gedimmt)
-  - Interior Light Front/Back Down (Hell)
-- **Interior Light Dim (Mercedes/VDL)** - Innenbeleuchtung 30% gedimmt Toggle
-- **Interior Light Full (Mercedes/VDL)** - Innenbeleuchtung 100% hell Toggle
-- **Reading Light Clearance (VDL)** - Leselampen-Freigabe für Passagiere
+- **Interior Light Control** - Universelle Innenbeleuchtungssteuerung:
+  - Erkennt automatisch den Bustyp (Solaris/Mercedes/VDL/Scania/MAN)
+  - Modi: Aus/Gedimmt/Voll/Links/Rechts
+- **Driver Light** - Fahrerbeleuchtung umschalten (funktioniert bei allen Bussen)
+- **Light Control (Solaris)** - Verschiedene Lichter am Bus steuern (Solaris-spezifisch)
+- **Scania Fog Lights** - Nebelscheinwerfer vorne/hinten (Scania-spezifisch)
+- **Reading Light Clearance (VDL)** - Leselampen-Freigabe für Passagiere (VDL-spezifisch)
 
-### 🪟 Fenster & Klima (3 Buttons)
-- **Window Control** - 10 Optionen:
-  - Driver Window Open/Close
-  - Window Shade Up/Down
-  - Window Shade Side Up/Down (VDL)
-  - Window Shade Front Up/Down (Scania)
-  - Window Shade Left Up/Down (Scania)
-- **Window/Mirror Heating** - Scheiben-/Spiegelheizung Toggle
-- **Climate Control** - Temperatur & Lüftung anzeigen
+### 🪟 Fenster & Klima (2 Schaltflächen)
+- **Climate Control** - Klimaanlage steuern:
+  - Temperatur & Lüftung anzeigen
+  - Verschiedene Klimafunktionen
+- **Window Control** - Fenstersteuerung mit 10+ Optionen:
+  - Fahrerfenster öffnen/schließen
+  - Jalousien hoch/runter
+  - Jalousien Seite hoch/runter (VDL)
+  - Jalousien vorne/links hoch/runter (Scania)
 
-### 🔽 Kneeling & Lifting (2 Buttons)
-- **Kneeling/Lifting** - 6 Optionen:
-  - Lifting Front
-  - Lifting Rear
-  - Kneeling Front
-  - Kneeling Rear
-  - Lifting
-  - Kneeling
-
-### 🌧️ Scheibenwischer (2 Buttons)
+### 🌧️ Bedienung (5 Schaltflächen)
 - **Wiper Speed Up** - Stufe erhöhen
 - **Wiper Speed Down** - Stufe verringern
 
@@ -131,65 +115,76 @@ Alle Buttons sind jetzt übersichtlich in Kategorien organisiert mit visuellen T
 - **Flash High Beam** - Fernlichtblitz/Lichthupe
 
 ### 📹 Kameras (1 Button)
-- **Camera Switch** - Kamera umschalten (funktioniert mit allen 4 Bussen!)
+- **Camera Switch** - Kamera umschalten (funktioniert mit allen 5 Bussen!)
 
-### 🚦 Spezial-Features (5 Buttons)
-- **Pantograph On/Off (Solaris)** - Stromabnehmer für Trolleybus
-- **Retarder Toggle** - Motorbremse/Dauerbremse (universal)
-- **Traction Control (ASR)** - Antriebsschlupfregelung Toggle (universal)
-- **RBL Toggle** - Ampel-Vorrang-System für grüne Welle
-  - Computer-gesteuertes Betriebsleitsystem
-  - Bus bekommt automatisch Grün an Ampeln
-- **USB Clearance** - USB-Freigabe
+### 🛑 Bremsen (2 Schaltflächen)
+- **Fixing Brake** - Feststellbremse umschalten (Drücken zum Aktivieren, Loslassen zum Deaktivieren)
+- **Stop Brake** - Haltestellenbremse umschalten
 
-### 📊 Info-Displays (5 Buttons)
-- **Fuel Info** - Kraftstoffstand anzeigen
-- **Passengers Info** - Passagieranzahl anzeigen
-- **Engine Info** - Motorstatus anzeigen
-- **Speed Info** - Geschwindigkeit anzeigen
-- **Stop Request** - Haltewunsch-Anzeige
+### 🚦 Spezial-Features (4 Schaltflächen)
+- **Pantograph On** - Stromabnehmer aktivieren (für Trolleybusse)
+- **Pantograph Off** - Stromabnehmer deaktivieren (für Trolleybusse)
+- **USB Clearance** - USB-Freigabe umschalten
+- **RBL Toggle** - Ampel-Vorrang-System für grüne Welle umschalten
+  - RBL = Rechnergesteuertes Betriebsleitsystem
+  - Computer-gesteuertes Ampel-Vorrang-System
+  - Bus meldet sich bei Ampeln und bekommt automatisch Grün
+  - Häufig in Deutschland/Österreich bei ÖPNV verwendet
 
-### 🎛️ Erweiterte Features (2 Buttons)
-- **Custom Action** - Eigene Events ohne Button-Funktion
-- **Custom Button** - Eigene Events mit Button-Funktion
+### 📊 Info-Displays (6 Schaltflächen)
+- **Engine Info** - Motor- und Fahrinformationen anzeigen
+- **Speed Display** - Aktuelle und erlaubte Geschwindigkeit anzeigen
+- **Fuel Display** - Kraftstoffstand, Prozent und Niedrig-Warnung anzeigen
+- **Passengers** - Passagier- und Türinformationen anzeigen
+- **Infos** - Fensterheizung, Spiegelheizung und Haltewunsch-Status anzeigen
+- **LED Monitor (experimental/untested)** - Bus-LEDs überwachen (experimentell/ungetestet)
 
-### 💡 Monitoring (1 Button)
-- **LED Monitor** - Alle LED-Stati überwachen
+### 🎛️ Erweiterte Features (3 Schaltflächen)
+- **Custom Action** - Eigene Befehle ausführen
+- **Bus Start Options (TML Custom Start Button)** - Bus-Startoptionen
+- **ALL Button (TML Custom Button)** - Eigener Button oder Schalter mit Rückmeldung
 
 ---
 
 ## 🎯 Kompatibilität
 
-| Feature | Solaris Urbino | Mercedes eCitaro | Scania Citywide | VDL Citea LLE |
-|---------|:--------------:|:----------------:|:---------------:|:-------------:|
-| Alle Standard-Features | ✅ | ✅ | ✅ | ✅ |
-| Door Progress Display | ⚠️ (nur bei Türen) | ⚠️ (nur bei Türen) | ✅ (0-100%) | ⚠️ (nur bei Türen) |
-| Light Switch | ✅ | ✅ | ✅ | ✅ |
-| Pantograph | ✅ | ❌ | ❌ | ❌ |
-| Interior Light Toggles | ❌ | ✅ | ❌ | ✅ |
-| Stop Brake | ❌ | ✅ | ❌ | ❌ |
-| Unified DoorLock | ❌ | ❌ | ✅ | ❌ |
-| Scania Lights | ❌ | ❌ | ✅ | ❌ |
-| Reading Light | ❌ | ❌ | ❌ | ✅ |
-| Retarder | ✅ | ✅ | ✅ | ✅ |
-| Traction Control (ASR) | ✅ | ✅ | ✅ | ✅ |
-| RBL | ✅ | ✅ | ✅ | ✅ |
+| Feature | Solaris Urbino | Mercedes eCitaro | Scania Citywide | VDL Citea LLE | MAN Lion's City |
+|---------|:--------------:|:----------------:|:---------------:|:-------------:|:---------------:|
+| Alle Standard-Features | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Tür-Fortschrittsanzeige | ⚠️ (nur bei Türen) | ⚠️ (nur bei Türen) | ✅ (0-100%) | ⚠️ (nur bei Türen) | ⚠️ (nur bei Türen) |
+| Light Switch | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Pantograph | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Interior Light Toggles | ❌ | ✅ | ❌ | ✅ | ❌ |
+| Stop Brake | ❌ | ✅ | ❌ | ❌ | ❌ |
+| Unified DoorLock | ❌ | ❌ | ✅ | ❌ | ❌ |
+| Scania Lights | ❌ | ❌ | ✅ | ❌ | ❌ |
+| Reading Light | ❌ | ❌ | ❌ | ✅ | ❌ |
+| Retarder | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Traction Control (ASR) | ✅ | ✅ | ✅ | ✅ | ✅ |
+| RBL | ✅ | ✅ | ✅ | ✅ | ✅ |
 
-**Hinweis:** Bus-spezifische Buttons sind im Namen gekennzeichnet. Universelle Features funktionieren in allen Bussen!
+**Hinweis:** Bus-spezifische Schaltflächen sind im Namen gekennzeichnet. Universelle Features funktionieren in allen Bussen!
 
 ## ✨ Highlights
 
+### 🚀 Was ist neu in v2.31.19?
+- 🎨 **Neue Kategorisierung** - 51 Aktionen in 12 übersichtlichen Kategorien
+- 📋 **Visuelle Trenner** - Kategorie-Überschriften mit Emoji-Format (━━━ 📡 KATEGORIE ━━━)
+- 🏷️ **LED Monitor** - Als experimental/untested markiert (60+ Optionen verfügbar)
+- 📝 **Verbesserte Tooltips** - Klarere Beschreibungen für alle Buttons
+- 🎯 **Logische Gruppierung** - Alle Buttons nach Funktion organisiert
+
 ### 🚀 Was ist neu in v2.0.4?
-- 🚦 **Retarder, ASR & RBL** - Professionelle Bus-Features für alle 4 Busse
+- 🚦 **Retarder, ASR & RBL** - Professionelle Bus-Features für alle 5 Busse
 - 💡 **VDL Reading Light** - Leselampen-Freigabe für Passagiere
 - 🔄 **Ampel-Vorrang-System (RBL)** - Automatisch grüne Ampeln bekommen
 - 📊 **API-basierte Icon-Synchronisation** - Icons zeigen immer den echten Bus-Status
 
 ### 🎯 Warum dieses Plugin?
-- ✅ **Alle 4 Busse** in einem Plugin - keine separaten Downloads mehr!
+- ✅ **Alle 5 Busse** in einem Plugin - keine separaten Downloads mehr!
 - ✅ **100+ Funktionen** - Komplette Bus-Kontrolle vom Stream Deck
 - ✅ **Smart Icons** - Zeigen automatisch den aktuellen Status
-- ✅ **Door Progress** - Sieh die Türöffnung in Echtzeit (Scania: 0-100%)
+- ✅ **Tür-Fortschritt** - Sieh die Türöffnung in Echtzeit (Scania: 0-100%)
 - ✅ **Light Switch** - Alle 6 Lichtpositionen mit einem Button durchschalten
 - ✅ **Custom Events** - Erstelle deine eigenen Buttons für spezielle Aktionen
 
@@ -199,14 +194,14 @@ Alle Buttons sind jetzt übersichtlich in Kategorien organisiert mit visuellen T
 
 ### v2.0.4 - VDL Extended Features (2025-11-29)
 - 💡 **Reading Light Clearance** - Leselampen-Freigabe für Passagiere (VDL)
-- 🚦 **Retarder Toggle** - Motorbremse/Dauerbremse ein/aus (universal)
-- 🚗 **Traction Control (ASR)** - Antriebsschlupfregelung Toggle (universal)
-- 🚦 **RBL Toggle** - Ampel-Vorrang-System für grüne Welle
+- 🚦 **Retarder umschalten** - Motorbremse/Dauerbremse ein/aus (universal)
+- 🚗 **Traction Control (ASR)** - Antriebsschlupfregelung umschalten (universal)
+- 🚦 **RBL umschalten** - Ampel-Vorrang-System für grüne Welle
   - RBL = Rechnergesteuertes Betriebsleitsystem
   - Computer-gesteuertes Ampel-Vorrang-System
   - Bus meldet sich bei Ampeln und bekommt automatisch Grün
   - Häufig in Deutschland/Österreich bei ÖPNV verwendet
-- 📹 **Camera Switch Fix** - Funktioniert jetzt mit allen 4 Bussen (SwitchPreviousCamera für VDL)
+- 📹 **Camera Switch Korrektur** - Funktioniert jetzt mit allen 5 Bussen (SwitchPreviousCamera für VDL)
 
 ### v2.0.3 - VDL Citea LLE Support (2025-11-29)
 - ✨ **VDL Citea LLE Support** - Vierter Bus komplett unterstützt!
