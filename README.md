@@ -1,5 +1,9 @@
 # BlackMautz TML Telemetry - The Bus (Universal Edition)
 
+> **⚠️ WORK IN PROGRESS**  
+> Dieses Plugin wird aktiv weiterentwickelt! Bugfixes, neue Features und Icon-Updates kommen regelmäßig.  
+> **👀 Repository beobachten** um Updates nicht zu verpassen: Klicke auf **"Watch"** → **"Releases only"**
+
 ---
 
 ## 🌍 Language / Sprache
