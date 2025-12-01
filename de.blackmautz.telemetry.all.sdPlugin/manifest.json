@@ -2,11 +2,11 @@
 	"SDKVersion": 2,
 	"Author": "TML Studios - Edit by BlackMautz",
 	"CodePath": "app.html",
-	"Description": "Control The Bus with your StreamDeck! ALL Edition (Solaris, Mercedes, Scania, VDL & MAN)",
+	"Description": "Control The Bus with your StreamDeck! ALL Edition (Solaris, Mercedes, Scania, VDL & MAN) - Full Custom Overlay with Drag&Drop, Resize, Border Toggle, Eye Toggle & Z-Index!",
 	"Name": "BlackMautz TML Telemetry - ALL",
 	"Icon": "actions/assets/Category",
 	"URL": "https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom_Solaris",
-	"Version": "2.31.24.0",
+	"Version": "4.2.0.0",
 	"UUID": "de.blackmautz.telemetry.all",
 	"Software": {
 		"MinimumVersion": "6.4"
@@ -690,6 +690,7 @@
 			"Tooltip": "RBL (Rechnergesteuertes Betriebsleitsystem) - Computer-controlled traffic signal priority system. Sends signals to traffic lights so the bus gets green lights at intersections. Helps buses move faster through the city without waiting at red lights. Commonly used in Germany/Austria for public transit.",
 			"UUID": "de.blackmautz.telemetry.all.rbl"
 		},
+
 		{
 			"Icon": "actions/assets/Category",
 			"Name": "━━━ ⚙️ CUSTOM ━━━",

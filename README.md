@@ -21,7 +21,9 @@
 
 Unterstützt **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide**, **VDL Citea LLE** UND **MAN Lion's City** mit allen Features in einem Plugin!
 
-**Version 2.31.24** - Alle Funktionen getestet und funktionsfähig in allen fünf Bussen!
+**Version 4.2.0** - Alle Funktionen getestet und funktionsfähig in allen fünf Bussen!
+
+**🆕 NEU: Vollständig anpassbares Stream Overlay für OBS/Twitch/YouTube!**
 
 ## 📸 Screenshots
 
@@ -52,11 +54,55 @@ Unterstützt **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide**, **VD
 Klicke oben rechts auf **"Watch"** → **"Custom"** → **"Releases"** ✅  
 → Du bekommst automatisch eine Email wenn ein neues Update da ist! 📧
 
+### 🖼️ Stream Overlay für OBS/Streaming
+
+Das Plugin enthält ein vollständig anpassbares HTML-Overlay für OBS/Twitch/YouTube!
+
+**So findest du das Overlay:**
+
+1. **Automatisch (empfohlen):**
+   - Drücke `Windows + R`
+   - Füge ein: `%appdata%\Elgato\StreamDeck\Plugins\de.blackmautz.telemetry.all.sdPlugin`
+   - Enter drücken
+   - Die Datei `overlay_fully_custom.html` mit Doppelklick öffnen
+
+2. **Manuell:**
+   - Vollständiger Pfad: `C:\Users\[DEINNAME]\AppData\Roaming\Elgato\StreamDeck\Plugins\de.blackmautz.telemetry.all.sdPlugin\overlay_fully_custom.html`
+
+3. **Tipp:** Erstelle einen Windows-Shortcut auf deinem Desktop für schnellen Zugriff!
+
+**Overlay Features:**
+- ✅ 34 anpassbare Telemetrie-Felder (Speed, Doors, Lights, Passengers, etc.)
+- ✅ 2 UMG Widget-Displays (Engine Info, LED Monitor)
+- ✅ Drag & Drop - Felder frei positionieren
+- ✅ Größe ändern - Jedes Feld individuell anpassen
+- ✅ Border-Toggle (📋) - Rahmen pro Feld ein/aus
+- ✅ Eye-Toggle (👁️) - Felder in OBS verstecken
+- ✅ Z-Index-Kontrolle (⬆️⬇️) - Überlappung steuern
+- ✅ Hintergrund-Vorschau (🖼️) - 1920x1080 Vorlage für pixel-genaue Platzierung
+- ✅ URL-Speicherung - Layout komplett in URL-Hash gespeichert
+- ✅ OBS Browser Source - Einfach URL kopieren & in OBS einfügen
+
+**Verwendung:**
+1. Overlay im Browser öffnen (siehe oben)
+2. Im **Edit Mode**: Felder positionieren & anpassen
+3. "Speichern & URL anzeigen" klicken
+4. URL kopieren
+5. In OBS: Browser Source → URL einfügen → Fertig!
+
 ---
 
 ## 🎮 Alle Features auf einen Blick
 
 **51 Aktionen: 11 Kategorie-Überschriften + 40 Funktionale Schaltflächen mit über 100+ Optionen!**
+
+### 🆕 Stream Overlay Features (v4.2.0)
+- **Vollständig anpassbares OBS/Streaming Overlay** mit 34 Telemetrie-Feldern + 2 UMG Widgets
+- **Individuelle Kontrolle** pro Feld: Border-Toggle (📋), Eye-Toggle (👁️), Z-Index (⬆️⬇️)
+- **Hintergrund-Vorschau**: 1920x1080 Vorlage für pixelgenaue Platzierung
+- **URL-Hash Speicherung**: Komplette Layout-Konfiguration in der URL
+- **OBS-optimiert**: Keine störenden Kontroll-Elemente im Stream, scrollbare URL-Anzeige
+- **Drag & Drop**: Felder überall anklicken & ziehen, manuelle Größenanpassung
 
 ### 📋 Neue Kategorisierung (v2.31.19)
 Alle Schaltflächen sind jetzt übersichtlich in Kategorien organisiert mit visuellen Trennern:
@@ -185,6 +231,14 @@ Alle Schaltflächen sind jetzt übersichtlich in Kategorien organisiert mit visu
 
 ## ✨ Highlights
 
+### 🚀 Was ist neu in v4.2.0?
+- 🖼️ **Vollständig anpassbares Stream Overlay** - Individueller Border-Toggle, Eye-Toggle zum Verstecken von Feldern, Z-Index Kontrolle für Überlappungen
+- 📐 **Hintergrund-Vorschau** - Vorschau-Bild (1920x1080) für pixelgenaue Feldplatzierung
+- 💾 **URL-Hash Speicherung** - Position, Größe, Rahmen, Sichtbarkeit und Z-Index werden in der URL gespeichert
+- 📊 **Auflösungs-Indikator** - Zeigt an, ob das Overlay in 1920x1080 läuft (✅/⚠️)
+- 🎛️ **Individuelle Feld-Kontrolle** - Jedes Feld kann einzeln angepasst werden (34 Felder + 2 UMG Widgets)
+- 📋 **OBS-optimiert** - Scrollbare URL-Anzeige, keine störenden Kontroll-Elemente im Stream
+
 ### 🚀 Was ist neu in v2.31.24?
 - 🎨 **Icon Updates** - Door Button und Driver Light mit eigenen Icons
 - 🖼️ **Neue Assets** - 4 zusätzliche Icon-Dateien
@@ -306,7 +360,9 @@ Bei Problemen oder Fragen:
 
 Supports **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide**, **VDL Citea LLE** AND **MAN Lion's City** with all features in one plugin!
 
-**Version 2.31.24** - All functions tested and working in all five buses!
+**Version 4.2.0** - All functions tested and working in all five buses!
+
+🆕 **NEW: Fully Customizable Stream Overlay for OBS/Twitch/YouTube!**
 
 ## 📸 Screenshots
 
@@ -329,7 +385,7 @@ Supports **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide**, **VDL Ci
 ## 📥 Installation & Updates
 
 ### Installation
-1. **[Download v2.31.24](https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom/releases)** - Latest `.streamDeckPlugin` file
+1. **[Download v4.2.0](https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom/releases)** - Latest `.streamDeckPlugin` file
 2. **Double-click** the file
 3. **Done!** Stream Deck installs automatically
 
@@ -339,9 +395,47 @@ Click **"Watch"** → **"Custom"** → **"Releases"** ✅
 
 ---
 
+## 🖼️ Stream Overlay for OBS/Streaming
+
+**NEW in v4.2.0:** Fully customizable overlay with 34 telemetry fields + 2 UMG widgets!
+
+**How to find the overlay file:**
+1. **Automatic:** Press Windows+R → Type: `%appdata%\Elgato\StreamDeck\Plugins\de.blackmautz.telemetry.all.sdPlugin` → Press Enter
+2. **Manual:** Navigate to: `C:\Users\[YourUsername]\AppData\Roaming\Elgato\StreamDeck\Plugins\de.blackmautz.telemetry.all.sdPlugin`
+3. **Tip:** Create a desktop shortcut to `overlay_fully_custom.html` for quick access!
+
+**Features:**
+- ✅ Drag & Drop - Click anywhere on a field to drag it
+- ✅ Manual Resize - Drag field edges to resize
+- ✅ Border Toggle (📋) - Show/hide borders per field
+- ✅ Eye Toggle (👁️) - Hide fields in OBS
+- ✅ Z-Index Control (⬆️⬇️) - Control overlapping
+- ✅ Background Preview (🖼️) - 1920x1080 template for pixel-perfect placement
+- ✅ URL Storage - Complete layout saved in URL hash
+- ✅ OBS Browser Source - Simply copy URL & paste in OBS
+- ✅ Resolution Indicator - Shows if overlay is running in 1920x1080 (✅/⚠️)
+- ✅ Scrollable URL Display - Clean interface for OBS integration
+
+**Usage:**
+1. Open overlay in browser (see above)
+2. In **Edit Mode**: Position & customize fields
+3. Click "Save & Show URL"
+4. Copy URL
+5. In OBS: Browser Source → Paste URL → Done!
+
+---
+
 ## 🎮 All Features at a Glance
 
 **51 Actions: 11 Category Headers + 40 Functional Buttons with 100+ options!**
+
+### 🆕 Stream Overlay Features (v4.2.0)
+- **Fully customizable OBS/Streaming overlay** with 34 telemetry fields + 2 UMG widgets
+- **Individual control** per field: Border toggle (📋), Eye toggle (👁️), Z-Index (⬆️⬇️)
+- **Background preview**: 1920x1080 template for pixel-perfect placement
+- **URL hash storage**: Complete layout configuration in URL
+- **OBS-optimized**: No distracting controls in stream, scrollable URL display
+- **Drag & Drop**: Click anywhere on field & drag, manual resizing
 
 ### 📋 New Categorization (v2.31.19)
 All buttons are now organized in categories with visual separators:
@@ -465,6 +559,14 @@ All buttons are now organized in categories with visual separators:
 **Note:** Bus-specific buttons are marked in the name. Universal features work in all buses!
 
 ## ✨ Highlights
+
+### 🚀 What's new in v4.2.0?
+- 🖼️ **Fully customizable Stream Overlay** - Individual border toggle, eye toggle to hide fields, Z-Index control for overlapping
+- 📐 **Background Preview** - Preview image (1920x1080) for pixel-perfect field placement
+- 💾 **URL Hash Storage** - Position, size, borders, visibility and Z-Index saved in URL
+- 📊 **Resolution Indicator** - Shows if overlay is running in 1920x1080 (✅/⚠️)
+- 🎛️ **Individual Field Control** - Each field can be customized individually (34 fields + 2 UMG widgets)
+- 📋 **OBS-optimized** - Scrollable URL display, no distracting control elements in stream
 
 ### 🚀 What's new in v2.0.4?
 - 🚦 **Retarder, ASR & RBL** - Professional bus features for all 5 buses
