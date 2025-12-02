@@ -19,9 +19,9 @@
 
 **Ein Stream Deck Plugin für ALLE Busse in The Bus!**
 
-Unterstützt **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide**, **VDL Citea LLE** UND **MAN Lion's City** mit allen Features in einem Plugin!
+Unterstützt **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide**, **VDL Citea LLE** und **MAN Lion's City** mit allen Features in einem Plugin!
 
-**Version 4.2.0** - Alle Funktionen getestet und funktionsfähig in allen fünf Bussen!
+**Version 4.2.1** - Alle Funktionen getestet und funktionsfähig in allen fünf Bussen!
 
 **🆕 NEU: Vollständig anpassbares Stream Overlay für OBS/Twitch/YouTube!**
 
@@ -46,7 +46,7 @@ Unterstützt **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide**, **VD
 ## 📥 Installation & Updates
 
 ### Installation
-1. **[Download v2.31.24](https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom/releases)** - Neueste `.streamDeckPlugin` Datei
+1. **[Download v4.2.1](https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom/releases)** - Neueste `.streamDeckPlugin` Datei
 2. **Doppelklick** auf die Datei
 3. **Fertig!** Stream Deck installiert automatisch
 
@@ -94,7 +94,7 @@ Das Plugin enthält ein vollständig anpassbares HTML-Overlay für OBS/Twitch/Yo
 
 ## 🎮 Alle Features auf einen Blick
 
-**51 Aktionen: 11 Kategorie-Überschriften + 40 Funktionale Schaltflächen mit über 100+ Optionen!**
+**52 Aktionen: 12 Kategorie-Überschriften + 40 Funktionale Schaltflächen mit über 100+ Optionen!**
 
 ### 🆕 Stream Overlay Features (v4.2.0)
 - **Vollständig anpassbares OBS/Streaming Overlay** mit 34 Telemetrie-Feldern + 2 UMG Widgets
@@ -154,7 +154,7 @@ Alle Schaltflächen sind jetzt übersichtlich in Kategorien organisiert mit visu
   - Status anzeigen
 - **Interior Light Control** - Universelle Innenbeleuchtungssteuerung:
   - Erkennt automatisch den Bustyp (Solaris/Mercedes/VDL/Scania/MAN)
-  - Modi: Aus/Gedimmt/Voll/Links/Rechts
+  - Modi: Aus/Gedimmt/Voll/Links/Rechts/MAN Lower Deck/MAN Upper Deck
 - **Driver Light** - Fahrerbeleuchtung umschalten (funktioniert bei allen Bussen)
 - **Light Control (Solaris)** - Verschiedene Lichter am Bus steuern (Solaris-spezifisch)
 - **Scania Fog Lights** - Nebelscheinwerfer vorne/hinten (Scania-spezifisch)
@@ -218,7 +218,7 @@ Alle Schaltflächen sind jetzt übersichtlich in Kategorien organisiert mit visu
 | Tür-Fortschrittsanzeige | ⚠️ (nur bei Türen) | ⚠️ (nur bei Türen) | ✅ (0-100%) | ⚠️ (nur bei Türen) | ⚠️ (nur bei Türen) |
 | Light Switch | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Pantograph | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Interior Light Toggles | ❌ | ✅ | ❌ | ✅ | ❌ |
+| Interior Light Toggles | ❌ | ✅ | ❌ | ✅ | ✅ (4 Modi) |
 | Stop Brake | ❌ | ✅ | ❌ | ❌ | ❌ |
 | Unified DoorLock | ❌ | ❌ | ✅ | ❌ | ❌ |
 | Scania Lights | ❌ | ❌ | ✅ | ❌ | ❌ |
@@ -229,7 +229,25 @@ Alle Schaltflächen sind jetzt übersichtlich in Kategorien organisiert mit visu
 
 **Hinweis:** Bus-spezifische Schaltflächen sind im Namen gekennzeichnet. Universelle Features funktionieren in allen Bussen!
 
+### ⚠️ Bekannte Einschränkungen
+
+**Scania Citywide - Passagierzählung funktioniert nicht:**
+- **Problem:** Die Passagier-Anzeige (`NumOccupiedSeats`) zeigt immer 0, auch wenn Passagiere im Bus sind
+- **Ursache:** Bug in The Bus API - das Spiel aktualisiert den Wert für Scania nicht
+- **Status:** Kann vom Plugin nicht behoben werden - erfordert Update von The Bus Entwicklern
+- **Workaround:** Keine Alternative verfügbar, alle anderen Passagier-bezogenen API-Felder funktionieren (z.B. `PassengerDoorsOpen`)
+- **Betroffene Busse:** Nur Scania - funktioniert korrekt bei Solaris/Mercedes/VDL/MAN
+
+---
+
 ## ✨ Highlights
+
+### 🚀 Was ist neu in v4.2.1?
+- 🚨 **KRITISCHER FIX: Blinker-Anzeige korrigiert**
+  - Problem: Links-Blinker zeigte "BEIDE", Rechts-Blinker zeigte "LINKS"
+  - Ursache: API sendet -1 für LINKS, 1 für RECHTS (nicht 1/2/3)
+  - Lösung: Mapping-Logik auf negative/positive Werte angepasst
+  - Status: Getestet und funktioniert ✅
 
 ### 🚀 Was ist neu in v4.2.0?
 - 🖼️ **Vollständig anpassbares Stream Overlay** - Individueller Border-Toggle, Eye-Toggle zum Verstecken von Feldern, Z-Index Kontrolle für Überlappungen
@@ -268,6 +286,59 @@ Alle Schaltflächen sind jetzt übersichtlich in Kategorien organisiert mit visu
 ---
 
 ## 📋 Changelog
+
+### v4.2.1 - Blinker/Indicator Fix (2025-12-02)
+- 🚨 **CRITICAL FIX: Blinker-Anzeige korrigiert**
+  - Problem: Links-Blinker zeigte "BEIDE", Rechts-Blinker zeigte "LINKS"
+  - Ursache: API sendet -1 für LINKS, 1 für RECHTS (nicht 1/2/3)
+  - Lösung: Mapping-Logik auf negative/positive Werte angepasst
+  - Status: Getestet und funktioniert ✅
+- 📊 **Overlay:** Korrekte Blinker-Anzeige in overlay_fully_custom.html
+
+### v4.2.0 - Stream Overlay Release (2025-12-01)
+- 🖼️ **Vollständig anpassbares Stream Overlay** für OBS/Twitch/YouTube
+  - 34 Telemetrie-Felder + 2 UMG Widgets (Engine Info, LED Monitor)
+  - Drag & Drop - Felder frei positionieren
+  - Größe ändern - Jedes Feld individuell anpassen
+  - Border-Toggle (📋) - Rahmen pro Feld ein/aus
+  - Eye-Toggle (👁️) - Felder in OBS verstecken
+  - Z-Index-Kontrolle (⬆️⬇️) - Überlappung steuern
+  - Hintergrund-Vorschau (🖼️) - 1920x1080 Vorlage für pixel-genaue Platzierung
+  - URL-Hash Speicherung - Komplette Layout-Konfiguration in der URL
+  - OBS-optimiert - Scrollbare URL-Anzeige, keine störenden Kontroll-Elemente
+- 📋 **OBS_SETUP.md** - Umfassende Setup-Anleitung (DE + EN)
+- 📝 **README Updates** - Vollständige Overlay-Dokumentation
+- 🗑️ **Cleanup** - 13 alte Dateien archiviert
+
+### v2.31.24 - Icon Updates (2025-01-14)
+- 🎨 **Driver Light Icon Update** - Unified icon naming scheme
+  - Icon changed to `driver-light.png` / `driver-light_On.png`
+  - Updated all references in app.js for consistency
+- 🚪 **Door Button Icon Update** - Now uses universal `ALL.png` icon
+- 🛑 **Retarder Icons** - Added `retarder.png` and `retarder-c.png` for consistency
+
+### v2.31.19 - UI Reorganization & MAN Support (2025-01-14)
+- 🚌 **MAN Lion's City Support** - Fifth bus fully supported!
+  - 4-mode interior light control (Lower/Upper Deck, Bright/Dimmed)
+  - Camera switch compatible with MAN
+  - All universal features work with MAN
+- 📂 **Complete UI Reorganization** - 51 actions in 12 categories:
+  - 📡 SYSTEM (2 buttons)
+  - 🚗 MOTOR (4 buttons)
+  - 🚪 TÜREN (4 buttons)
+  - 🚦 LICHTER (6 buttons)
+  - 🔊 BEDIENUNG (5 buttons)
+  - 🛑 BREMSEN (2 buttons)
+  - ❄️ KOMFORT (2 buttons)
+  - ⚡ ELEKTRO (2 buttons)
+  - ℹ️ DISPLAYS (6 buttons)
+  - 💰 TICKETING (2 buttons)
+  - 🛠️ ERWEITERT (3 buttons)
+  - ⚙️ **CUSTOM** (2 buttons)
+- 🎯 **Visual Category Headers** - Beautiful separators with emojis (━━━ 📡 CATEGORY ━━━)
+- 🌍 **Universal Interior Light Control** - Auto-detects bus type
+  - Works with all 5 buses: Solaris, Mercedes, VDL, Scania, MAN
+  - Supports modes: Off/Dim/Full/Left/Right + MAN-specific modes
 
 ### v2.0.4 - VDL Extended Features (2025-11-29)
 - 💡 **Reading Light Clearance** - Leselampen-Freigabe für Passagiere (VDL)
@@ -325,6 +396,8 @@ Das Plugin erkennt automatisch welcher Bus aktiv ist:
 - **Mercedes:** Nutzt Standard-API mit zusätzlichen Interior Light Events
 - **Scania:** Nutzt `/vehicles/current` Fallback und `Doors[]` Property
 - **VDL Citea LLE:** Nutzt `/vehicles/current` mit `InteriorLightLevel` Button für 3-State Interior Lights
+- **MAN Lion's City:** Nutzt Standard-API mit 4-Modi Interior Lights (Lower/Upper Deck, Bright/Dimmed)
+- **MAN Lion's City:** Nutzt Standard-API mit 4-Modi Interior Lights (Lower/Upper Deck, Bright/Dimmed)
 
 ## 👨‍💻 Credits
 
@@ -358,9 +431,9 @@ Bei Problemen oder Fragen:
 
 **A Stream Deck Plugin for ALL buses in The Bus!**
 
-Supports **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide**, **VDL Citea LLE** AND **MAN Lion's City** with all features in one plugin!
+Supports **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide**, **VDL Citea LLE** and **MAN Lion's City** with all features in one plugin!
 
-**Version 4.2.0** - All functions tested and working in all five buses!
+**Version 4.2.1** - All functions tested and working in all five buses!
 
 🆕 **NEW: Fully Customizable Stream Overlay for OBS/Twitch/YouTube!**
 
@@ -385,7 +458,7 @@ Supports **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide**, **VDL Ci
 ## 📥 Installation & Updates
 
 ### Installation
-1. **[Download v4.2.0](https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom/releases)** - Latest `.streamDeckPlugin` file
+1. **[Download v4.2.1](https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom/releases)** - Latest `.streamDeckPlugin` file
 2. **Double-click** the file
 3. **Done!** Stream Deck installs automatically
 
@@ -427,7 +500,7 @@ Click **"Watch"** → **"Custom"** → **"Releases"** ✅
 
 ## 🎮 All Features at a Glance
 
-**51 Actions: 11 Category Headers + 40 Functional Buttons with 100+ options!**
+**52 Actions: 12 Category Headers + 40 Functional Buttons with 100+ options!**
 
 ### 🆕 Stream Overlay Features (v4.2.0)
 - **Fully customizable OBS/Streaming overlay** with 34 telemetry fields + 2 UMG widgets
@@ -487,7 +560,7 @@ All buttons are now organized in categories with visual separators:
   - Show status
 - **Interior Light Control** - Universal interior light control:
   - Auto-detects bus type (Solaris/Mercedes/VDL/Scania/MAN)
-  - Modes: Off/Dim/Full/Left/Right
+  - Modes: Off/Dim/Full/Left/Right/MAN Lower Deck/MAN Upper Deck
 - **Driver Light** - Toggle driver's cabin light (works on all buses)
 - **Light Control (Solaris)** - Control various lights on the bus (Solaris-specific)
 - **Scania Fog Lights** - Front/rear fog lights (Scania-specific)
@@ -541,24 +614,42 @@ All buttons are now organized in categories with visual separators:
 
 ## 🎯 Compatibility
 
-| Feature | Solaris Urbino | Mercedes eCitaro | Scania Citywide | VDL Citea LLE |
-|---------|:--------------:|:----------------:|:---------------:|:-------------:|
-| All Standard Features | ✅ | ✅ | ✅ | ✅ |
-| Door Progress Display | ⚠️ (doors only) | ⚠️ (doors only) | ✅ (0-100%) | ⚠️ (doors only) |
-| Light Switch | ✅ | ✅ | ✅ | ✅ |
-| Pantograph | ✅ | ❌ | ❌ | ❌ |
-| Interior Light Toggles | ❌ | ✅ | ❌ | ✅ |
-| Stop Brake | ❌ | ✅ | ❌ | ❌ |
-| Unified DoorLock | ❌ | ❌ | ✅ | ❌ |
-| Scania Lights | ❌ | ❌ | ✅ | ❌ |
-| Reading Light | ❌ | ❌ | ❌ | ✅ |
-| Retarder | ✅ | ✅ | ✅ | ✅ |
-| Traction Control (ASR) | ✅ | ✅ | ✅ | ✅ |
-| RBL | ✅ | ✅ | ✅ | ✅ |
+| Feature | Solaris Urbino | Mercedes eCitaro | Scania Citywide | VDL Citea LLE | MAN Lion's City |
+|---------|:--------------:|:----------------:|:---------------:|:-------------:|:---------------:|
+| All Standard Features | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Door Progress Display | ⚠️ (doors only) | ⚠️ (doors only) | ✅ (0-100%) | ⚠️ (doors only) | ⚠️ (doors only) |
+| Light Switch | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Pantograph | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Interior Light Toggles | ❌ | ✅ | ❌ | ✅ | ✅ (4 modes) |
+| Stop Brake | ❌ | ✅ | ❌ | ❌ | ❌ |
+| Unified DoorLock | ❌ | ❌ | ✅ | ❌ | ❌ |
+| Scania Lights | ❌ | ❌ | ✅ | ❌ | ❌ |
+| Reading Light | ❌ | ❌ | ❌ | ✅ | ❌ |
+| Retarder | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Traction Control (ASR) | ✅ | ✅ | ✅ | ✅ | ✅ |
+| RBL | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 **Note:** Bus-specific buttons are marked in the name. Universal features work in all buses!
 
+### ⚠️ Known Limitations
+
+**Scania Citywide - Passenger Count Not Working:**
+- **Issue:** Passenger display (`NumOccupiedSeats`) always shows 0, even when passengers are in the bus
+- **Cause:** Bug in The Bus API - the game doesn't update the value for Scania
+- **Status:** Cannot be fixed by the plugin - requires update from The Bus developers
+- **Workaround:** No alternative available, all other passenger-related API fields work (e.g. `PassengerDoorsOpen`)
+- **Affected Buses:** Scania only - works correctly on Solaris/Mercedes/VDL/MAN
+
+---
+
 ## ✨ Highlights
+
+### 🚀 What's new in v4.2.1?
+- 🚨 **CRITICAL FIX: Indicator/Blinker Display Corrected**
+  - Issue: Left blinker showed "BEIDE", right blinker showed "LINKS"
+  - Cause: API sends -1 for LEFT, 1 for RIGHT (not 1/2/3)
+  - Solution: Mapping logic adjusted for negative/positive values
+  - Status: Tested and working ✅
 
 ### 🚀 What's new in v4.2.0?
 - 🖼️ **Fully customizable Stream Overlay** - Individual border toggle, eye toggle to hide fields, Z-Index control for overlapping
@@ -586,6 +677,29 @@ All buttons are now organized in categories with visual separators:
 
 ## 📋 Changelog
 
+### v4.2.1 - Indicator/Blinker Fix (2025-12-02)
+- 🚨 **CRITICAL FIX: Indicator/Blinker Display Corrected**
+  - Issue: Left blinker showed "BEIDE" (BOTH), right blinker showed "LINKS" (LEFT)
+  - Root cause: API sends -1 for LEFT, 1 for RIGHT (not 1/2/3 as expected)
+  - Solution: Mapping logic adjusted to handle negative/positive integer values
+  - Status: Tested and confirmed working ✅
+- 📊 **Overlay:** Correct indicator display in overlay_fully_custom.html
+
+### v4.2.0 - Stream Overlay Release (2025-12-01)
+- 🖼️ **Fully Customizable Stream Overlay** for OBS/Twitch/YouTube
+  - 34 telemetry fields + 2 UMG widgets (Engine Info, LED Monitor)
+  - Drag & Drop - Position fields freely
+  - Resize - Adjust each field individually
+  - Border Toggle (📋) - Show/hide borders per field
+  - Eye Toggle (👁️) - Hide fields in OBS
+  - Z-Index Control (⬆️⬇️) - Control overlapping
+  - Background Preview (🖼️) - 1920x1080 template for pixel-perfect placement
+  - URL Hash Storage - Complete layout configuration saved in URL
+  - OBS-optimized - Scrollable URL display, no distracting control elements
+- 📋 **OBS_SETUP.md** - Comprehensive setup guide (DE + EN)
+- 📝 **README Updates** - Complete overlay documentation
+- 🗑️ **Cleanup** - 13 old files archived
+
 ### v2.31.24 - Icon Updates (2025-01-14)
 - 🎨 **Driver Light Icon Update** - Unified icon naming scheme
   - Icon changed to `driver-light.png` / `driver-light_On.png`
@@ -595,17 +709,17 @@ All buttons are now organized in categories with visual separators:
 
 ### v2.31.19 - UI Reorganization & MAN Support (2025-01-14)
 - 🚌 **MAN Lion's City Support** - Fifth bus fully supported!
-  - All features now work with MAN buses
+  - 4-mode interior light control (Lower/Upper Deck, Bright/Dimmed)
   - Camera switch compatible with MAN
-  - Interior light control works universally
-- 📂 **Complete UI Reorganization** - 51 actions in 12 categories:
+  - All universal features work with MAN
+- 📂 **Complete UI Reorganization** - 52 actions in 12 categories:
   - 📡 SYSTEM (2 buttons)
   - 🚗 MOTOR (4 buttons)
   - 🚪 TÜREN (4 buttons)
   - 🚦 LICHTER (6 buttons)
   - 🔊 BEDIENUNG (5 buttons)
   - 🛑 BREMSEN (2 buttons)
-  - ❄️ KOMFORT (2 buttons)
+  - ❄️ KOMFORT (3 buttons)
   - ⚡ ELEKTRO (2 buttons)
   - ℹ️ DISPLAYS (6 buttons)
   - 💰 TICKETING (2 buttons)
@@ -614,7 +728,7 @@ All buttons are now organized in categories with visual separators:
 - 🎯 **Visual Category Headers** - Beautiful separators with emojis (━━━ 📡 CATEGORY ━━━)
 - 🌍 **Universal Interior Light Control** - Auto-detects bus type
   - Works with all 5 buses: Solaris, Mercedes, VDL, Scania, MAN
-  - Supports modes: Off/Dim/Full/Left/Right
+  - Supports modes: Off/Dim/Full/Left/Right + MAN-specific modes
 
 ### v2.0.4 - VDL Extended Features (2025-11-29)
 - 💡 **Reading Light Clearance** - Reading light clearance for passengers (VDL)
@@ -625,7 +739,7 @@ All buttons are now organized in categories with visual separators:
   - Computer-controlled system for automatic green phases at traffic lights
   - Bus reports to traffic lights and automatically gets green
   - Commonly used in Germany/Austria for public transit
-- 📹 **Camera Switch Fix** - Now works with all 4 buses (SwitchPreviousCamera for VDL)
+- 📹 **Camera Switch Fix** - Now works with all 5 buses (SwitchPreviousCamera for VDL)
 
 ### v2.0.3 - VDL Citea LLE Support (2025-11-29)
 - ✨ **VDL Citea LLE Support** - Fourth bus fully supported!
@@ -672,7 +786,7 @@ The plugin automatically detects which bus is active:
 - **Mercedes:** Uses standard API with additional Interior Light Events
 - **Scania:** Uses `/vehicles/current` fallback and `Doors[]` property
 - **VDL Citea LLE:** Uses `/vehicles/current` with `InteriorLightLevel` button for 3-state Interior Lights
-- **MAN Lion's City:** Uses standard API with universal interior light control
+- **MAN Lion's City:** Uses standard API with 4-mode Interior Lights (Lower/Upper Deck, Bright/Dimmed)
 
 ## 👨‍💻 Credits
 
