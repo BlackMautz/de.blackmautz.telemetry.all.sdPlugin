@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Board Computer Inspector</title>
+    <link rel="stylesheet" href="../../libs/css/sdpi.css">
+</head>
+<body>
+    <div class="sdpi-wrapper">
+        <div class="sdpi-item">
+            <div class="sdpi-item-label">Funktion</div>
+            <div class="sdpi-item-value">
+                <span>Wechselt zwischen den Ansichten des Fahrerbildschirms (Bordcomputer)</span>
+            </div>
+        </div>
+        
+        <details class="message info" open>
+            <summary>ℹ️ Information</summary>
+            <p>Jeder Tastendruck wechselt zur nächsten Ansicht des Bordcomputers.</p>
+            <p><strong>Funktioniert in:</strong> Mercedes, Scania, VDL, Solaris</p>
+        </details>
+    </div>
+    
+    <script src="../../libs/js/constants.js"></script>
+    <script src="../../libs/js/prototypes.js"></script>
+    <script src="../../libs/js/timers.js"></script>
+    <script src="../../libs/js/utils.js"></script>
+    <script src="../../libs/js/events.js"></script>
+    <script src="../../libs/js/api.js"></script>
+    <script src="../../libs/js/property-inspector.js"></script>
+    <script src="../../libs/js/dynamic-styles.js"></script>
+
+    <script>
+        $PI.onConnected((jsn) => {
+            const {actionInfo, appInfo, connection, messageType, port, uuid} = jsn;
+            console.log("[BoardComputer Inspector] Connected");
+        });
+    </script>
+</body>
+</html>

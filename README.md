@@ -21,7 +21,19 @@
 
 Unterstützt **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide**, **VDL Citea LLE** und **MAN Lion's City** mit allen Features in einem Plugin!
 
-**Version 4.2.1** - Alle Funktionen getestet und funktionsfähig in allen fünf Bussen!
+**Version 4.6.0** - Board Computer & Camera Mercedes Button hinzugefügt!
+
+**🆕 NEU in v4.6.0:**
+- 🖥️ **Board Computer** - Fahrerbildschirm wechseln (MenuHomescreen Event)
+- 📹 **Camera Mercedes** - Vollständige Kamera-Steuerung (4 Funktionen)
+  - Überwachungskamera On/Off
+  - Monitor Display On/Off
+  - Previous/Next Camera
+
+**🆕 NEU in v4.5.0:**
+- 📱 **Phone Display (Scania)** - Monitoring aller 21 Phone Buttons (READ-ONLY)
+- 📻 **Radio Display (MAN)** - Monitoring aller 26 Radio Buttons (READ-ONLY)
+- ☀️ **Sonnenrollo Control (MAN)** - COMING SOON (aktuell nur 3D-Objekte)
 
 **🆕 NEU: Vollständig anpassbares Stream Overlay für OBS/Twitch/YouTube!**
 
@@ -46,7 +58,7 @@ Unterstützt **Solaris Urbino**, **Mercedes eCitaro**, **Scania Citywide**, **VD
 ## 📥 Installation & Updates
 
 ### Installation
-1. **[Download v4.2.1](https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom/releases)** - Neueste `.streamDeckPlugin` Datei
+1. **[Download v4.5.0](https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom/releases)** - Neueste `.streamDeckPlugin` Datei
 2. **Doppelklick** auf die Datei
 3. **Fertig!** Stream Deck installiert automatisch
 
@@ -94,7 +106,23 @@ Das Plugin enthält ein vollständig anpassbares HTML-Overlay für OBS/Twitch/Yo
 
 ## 🎮 Alle Features auf einen Blick
 
-**52 Aktionen: 12 Kategorie-Überschriften + 40 Funktionale Schaltflächen mit über 100+ Optionen!**
+**56 Aktionen: 13 Kategorie-Überschriften + 43 Funktionale Schaltflächen mit über 100+ Optionen!**
+
+### 🆕 Neue Features (v4.5.0)
+- **📱 Phone Display (Scania)** - Live-Monitoring aller 21 Phone Buttons (READ-ONLY)
+  - Zeigt Status aller Bluetooth-Phone Tasten im Cockpit
+  - 0-9, S1, S2, Call, Close, Cross, Mode, Mute, Next, Power, Prev, Volume
+  - Physische Bone_CP Buttons - nur Anzeige, keine Steuerung
+  
+- **📻 Radio Display (MAN)** - Live-Monitoring aller 26 Radio Buttons (READ-ONLY)
+  - Zeigt Status aller Funk-Tasten im Cockpit
+  - 0-9, GRP, CLR, EXT, MENU, DIR, VAL, NEXT, FLASH, OnOff, Emergency, VOL+/-, MULTI, END, MEM, SEND
+  - Physische Buttons - nur Anzeige, keine Steuerung
+  
+- **☀️ Sonnenrollo Control (MAN)** - COMING SOON
+  - WindowShade 1 & 2 Up/Down Events vorbereitet
+  - Aktuell nur 3D-Objekte (Maus-Steuerung) - API akzeptiert Events aber keine Wirkung
+  - Button für zukünftige API-Updates bereit
 
 ### 🆕 Stream Overlay Features (v4.2.0)
 - **Vollständig anpassbares OBS/Streaming Overlay** mit 34 Telemetrie-Feldern + 2 UMG Widgets
@@ -286,6 +314,32 @@ Alle Schaltflächen sind jetzt übersichtlich in Kategorien organisiert mit visu
 ---
 
 ## 📋 Changelog
+
+### v4.5.0 - Monitoring Features (2025-12-02)
+- 📱 **Phone Display (Scania)** - Live-Monitoring aller 21 Phone Buttons (READ-ONLY)
+  - Zeigt Status aller Bluetooth-Phone Tasten (Bone_CP_Phone)
+  - Dropdown: 0-9, S1, S2, Call, Close, Cross, Mode, Mute, Next, Power, Prev, Volume
+  - API kann Status lesen, aber nicht steuern (physische 3D-Objekte)
+- 📻 **Radio Display (MAN)** - Live-Monitoring aller 26 Radio Buttons (READ-ONLY)
+  - Zeigt Status aller Funk-Tasten im Cockpit
+  - Dropdown: 0-9, GRP, CLR, EXT, MENU, DIR, VAL, NEXT, FLASH, OnOff, Emergency, VOL+/-, MULTI, END, MEM, SEND
+  - API kann Status lesen, aber nicht steuern (physische Buttons)
+- ☀️ **Sonnenrollo Control (MAN)** - COMING SOON Category
+  - WindowShade 1 & 2 Up/Down Events vorbereitet
+  - Aktuell nicht funktionsfähig (interaktive 3D-Objekte, nur Maus-Steuerung)
+  - Button für zukünftige MAN API-Updates bereit
+- 📊 **BUS_OVERVIEW.html** - Erweiterte Dokumentation
+  - v4.5.0 mit detaillierter Problemanalyse
+  - Technische Details zu READ-ONLY Features
+  - API-Test Ergebnisse dokumentiert
+- 📝 **DEVELOPMENT_WORKFLOW.md** - Komplette Entwicklungs-Anleitung
+  - Schritt-für-Schritt Anleitung für neue Buttons
+  - Code-Templates für Property Inspector, Manifest, App.js
+  - API-Test Befehle und Troubleshooting
+- 🔧 **Property Inspectors** - Verbesserte UX
+  - Detaillierte Warnungen warum Features nicht funktionieren
+  - Technische Hintergründe zu Bone_CP Buttons
+  - Klare Unterscheidung zwischen Monitoring und Steuerung
 
 ### v4.2.1 - Blinker/Indicator Fix (2025-12-02)
 - 🚨 **CRITICAL FIX: Blinker-Anzeige korrigiert**

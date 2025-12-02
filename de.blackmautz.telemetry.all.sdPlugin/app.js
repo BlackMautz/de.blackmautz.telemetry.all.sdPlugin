@@ -15,6 +15,9 @@ const LightControlAction = new Action('de.blackmautz.telemetry.all.lightcontrol'
 const WiperUpAction = new Action('de.blackmautz.telemetry.all.wiperup');
 const WiperDownAction = new Action('de.blackmautz.telemetry.all.wiperdown');
 const HornAction = new Action('de.blackmautz.telemetry.all.horn');
+const PhoneDisplayAction = new Action('de.blackmautz.telemetry.all.phonedisplay');
+const RadioDisplayAction = new Action('de.blackmautz.telemetry.all.radiodisplay');
+const SonnenrolloAction = new Action('de.blackmautz.telemetry.all.sonnenrollo');
 const HighBeamFlasherAction = new Action('de.blackmautz.telemetry.all.highbeamflasher');
 const LightSwitchAction = new Action('de.blackmautz.telemetry.all.lightswitchv2');
 const InfosAction = new Action('de.blackmautz.telemetry.all.infos');
@@ -30,6 +33,8 @@ const WindowControlAction = new Action('de.blackmautz.telemetry.all.windowcontro
 const PantographOnAction = new Action('de.blackmautz.telemetry.all.pantographon');
 const PantographOffAction = new Action('de.blackmautz.telemetry.all.pantographoff');
 const CameraSwitchAction = new Action('de.blackmautz.telemetry.all.cameraswitch');
+const CameraMercedesAction = new Action('de.blackmautz.telemetry.all.cameramercedes');
+const BoardComputerAction = new Action('de.blackmautz.telemetry.all.boardcomputer');
 const USBClearanceAction = new Action('de.blackmautz.telemetry.all.usbclearance');
 const WheelchairRequestAction = new Action('de.blackmautz.telemetry.all.wheelchairrequest');
 const StopRequestAction = new Action('de.blackmautz.telemetry.all.stoprequest');
@@ -408,6 +413,12 @@ function UpdateTelemetryData()
 				GlobalIconUpdateData.forEach(IconUpdate => {
 					UpdateIcon(IconUpdate.SourceType, IconUpdate.SourceName, IconUpdate.TargetValue, IconUpdate.OffIcon, IconUpdate.OnIcon, IconUpdate.Context);
 				});
+				
+				// Update Phone Display buttons (Scania)
+				UpdatePhoneDisplayButtons();
+				
+				// Update Radio Display buttons (MAN)
+				UpdateRadioDisplayButtons();
 			})
 		}
 	}
@@ -674,10 +685,18 @@ DoorAction.onKeyDown(({ action, context, device, event, payload }) => {
 		"Door 4": "FourthDoorOpenClose",
 		"Clearance": "ToggleDoorClearance",
 		"Auto Kneeling": "toggleAutoKneeling",
-		"Door Autoclose": "PreventRearAuto",
+		"Door Autoclose": "PreventRearAuto",  // Solaris, Mercedes, Scania, VDL
 		"Lock Left": "LockLeftDoor",
 		"Lock Right": "LockRightDoor"
 	};
+	
+	// MAN Lion's City: Different event names
+	var manEventMapping = {
+		"Door Autoclose": "ToggleAutomaticRearDoorClosing"
+	};
+	
+	// Try MAN event first, fallback to default
+	var eventName = manEventMapping[DoorName] || eventMapping[DoorName];
 	
 	// Alternative door events for different bus models
 	// Scania and other buses use different event names than Solaris/Mercedes
@@ -2027,6 +2046,251 @@ HornAction.onWillAppear(({ action, context, device, event, payload }) => {
 });
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Phone Display Action (Scania Phone System - READ-ONLY Monitoring)
+
+PhoneDisplayAction.onWillAppear(({ action, context, device, event, payload }) => {
+	$SD.getSettings(context);
+});
+
+PhoneDisplayAction.onDidReceiveSettings(({ action, context, device, event, payload }) => {
+	// Save context for updates
+	if (!PhoneDisplayAction.contexts) {
+		PhoneDisplayAction.contexts = [];
+	}
+	if (!PhoneDisplayAction.contexts.includes(context)) {
+		PhoneDisplayAction.contexts.push(context);
+	}
+});
+
+PhoneDisplayAction.onWillDisappear(({ action, context, device, event, payload }) => {
+	// Remove context
+	if (PhoneDisplayAction.contexts) {
+		PhoneDisplayAction.contexts = PhoneDisplayAction.contexts.filter(c => c !== context);
+	}
+});
+
+// Update function called from main polling loop
+function UpdatePhoneDisplayButtons() {
+	if (!PhoneDisplayAction.contexts || PhoneDisplayAction.contexts.length === 0) return;
+	
+	// Phone button mapping: Property Inspector names to API button names
+	const phoneButtonMap = {
+		"Phone_1": "Bone_CP_Phone_1",
+		"Phone_2": "Bone_CP_Phone_2",
+		"Phone_3": "Bone_CP_Phone_3",
+		"Phone_4": "Bone_CP_Phone_4",
+		"Phone_5": "Bone_CP_Phone_5",
+		"Phone_6": "Bone_CP_Phone_6",
+		"Phone_7": "Bone_CP_Phone_7",
+		"Phone_8": "Bone_CP_Phone_8",
+		"Phone_9": "Bone_CP_Phone_9",
+		"Phone_0": "Bone_CP_Phone_0",
+		"Phone_S1": "Bone_CP_Phone_S1",
+		"Phone_S2": "Bone_CP_Phone_S2",
+		"Phone_Call": "Bone_CP_Phone_Call",
+		"Phone_Close": "Bone_CP_Phone_Close",
+		"Phone_Cross": "Bone_CP_Phone_Cross",
+		"Phone_Mode": "Bone_CP_Phone_Mode",
+		"Phone_Mute": "Bone_CP_Phone_Mute",
+		"Phone_Next": "Bone_CP_Phone_Next",
+		"Phone_Power": "Bone_CP_Phone_Power",
+		"Phone_Prev": "Bone_CP_Phone_Prev",
+		"Phone_Volume": "Bone_CP_Phone_Volume"
+	};
+	
+	PhoneDisplayAction.contexts.forEach(context => {
+		const settings = PhoneDisplayAction.settings?.[context] || {};
+		const phoneSelector = settings.PhoneSelector || "Phone_1";
+		const showState = settings.ShowState !== false; // Default true
+		
+		const buttonName = phoneButtonMap[phoneSelector];
+		if (!buttonName) return;
+		
+		// Find button in GlobalButtonData
+		const phoneButton = GlobalButtonData.find(b => b.Name === buttonName);
+		
+		if (phoneButton) {
+			// Phone buttons are toggle buttons: true = active/pressed, false = inactive
+			const isActive = phoneButton.State === true || phoneButton.State === "true";
+			
+			// Set state: 0 = inactive (off), 1 = active (on)
+			$SD.setState(context, isActive ? 1 : 0);
+			
+			// Set title with button name and state
+			let title = phoneSelector.replace("Phone_", "");
+			if (showState) {
+				title += "\n" + (isActive ? "●" : "○");
+			}
+			$SD.setTitle(context, title);
+		} else {
+			// Button not found - show "N/A" for non-Scania buses
+			$SD.setState(context, 0);
+			$SD.setTitle(context, phoneSelector.replace("Phone_", "") + "\nN/A");
+		}
+	});
+}
+
+PhoneDisplayAction.onDidReceiveSettings = ({ action, context, device, event, payload }) => {
+	// Store settings
+	if (!PhoneDisplayAction.settings) {
+		PhoneDisplayAction.settings = {};
+	}
+	PhoneDisplayAction.settings[context] = payload.settings;
+};
+
+
+// ============================================================================
+// Radio Display Action (MAN Radio System - READ-ONLY Monitoring)
+// ============================================================================
+
+RadioDisplayAction.onWillAppear(({ action, context, device, event, payload }) => {
+	$SD.getSettings(context);
+});
+
+RadioDisplayAction.onDidReceiveSettings(({ action, context, device, event, payload }) => {
+	// Save context for updates
+	if (!RadioDisplayAction.contexts) {
+		RadioDisplayAction.contexts = [];
+	}
+	if (!RadioDisplayAction.contexts.includes(context)) {
+		RadioDisplayAction.contexts.push(context);
+	}
+});
+
+RadioDisplayAction.onWillDisappear(({ action, context, device, event, payload }) => {
+	// Remove context
+	if (RadioDisplayAction.contexts) {
+		RadioDisplayAction.contexts = RadioDisplayAction.contexts.filter(c => c !== context);
+	}
+});
+
+// Update function called from main polling loop
+function UpdateRadioDisplayButtons() {
+	if (!RadioDisplayAction.contexts || RadioDisplayAction.contexts.length === 0) return;
+	
+	// Radio button mapping: Property Inspector names to API button names
+	const radioButtonMap = {
+		"Radio_0": "Radio_0",
+		"Radio_1": "Radio_1",
+		"Radio_2": "Radio_2",
+		"Radio_3": "Radio_3",
+		"Radio_4": "Radio_4",
+		"Radio_5": "Radio_5",
+		"Radio_6": "Radio_6",
+		"Radio_7": "Radio_7",
+		"Radio_8": "Radio_8",
+		"Radio_9": "Radio_9",
+		"Radio_GRP": "Radio_GRP",
+		"Radio_CLR": "Radio_CLR",
+		"Radio_EXT": "Radio_EXT",
+		"Radio_MENU": "Radio_MENU",
+		"Radio_DIR": "Radio_DIR",
+		"Radio_VAL": "Radio_VAL",
+		"Radio_NEXT": "Radio_NEXT",
+		"Radio_FLASH": "Radio_FLASH",
+		"Radio_OnOff": "Radio_OnOff",
+		"Radio_Emergency": "Radio_Emergency",
+		"Radio_VOL_PLUS": "Radio_VOL_PLUS",
+		"Radio_VOL_MINUS": "Radio_VOL_MINUS",
+		"Radio_MULTI": "Radio_MULTI",
+		"Radio_END": "Radio_END",
+		"Radio_MEM": "Radio_MEM",
+		"Radio_SEND": "Radio_SEND"
+	};
+	
+	RadioDisplayAction.contexts.forEach(context => {
+		const settings = RadioDisplayAction.settings?.[context] || {};
+		const radiobutton = settings.radiobutton || "Radio_0";
+		const showstate = settings.showstate !== false; // Default true
+		
+		const buttonName = radioButtonMap[radiobutton];
+		if (!buttonName) return;
+		
+		// Find button in GlobalButtonData
+		const radioButton = GlobalButtonData.find(b => b.Name === buttonName);
+		
+		if (radioButton) {
+			// Radio buttons are toggle buttons: true = active/pressed, false = inactive
+			const isActive = radioButton.State === true || radioButton.State === "true";
+			
+			// Set state: 0 = inactive (off), 1 = active (on)
+			$SD.setState(context, isActive ? 1 : 0);
+			
+			// Set title with button label and state
+			let title = radiobutton.replace("Radio_", "");
+			if (showstate) {
+				title += "\n" + (isActive ? "●" : "○");
+			}
+			$SD.setTitle(context, title);
+		} else {
+			// Button not found - show "N/A" for non-MAN buses
+			$SD.setState(context, 0);
+			$SD.setTitle(context, radiobutton.replace("Radio_", "") + "\nN/A");
+		}
+	});
+}
+
+RadioDisplayAction.onDidReceiveSettings = ({ action, context, device, event, payload }) => {
+	// Store settings
+	if (!RadioDisplayAction.settings) {
+		RadioDisplayAction.settings = {};
+	}
+	RadioDisplayAction.settings[context] = payload.settings;
+};
+
+
+// ============================================================================
+// Sonnenrollo Action (MAN WindowShade - COMING SOON, currently not working)
+// ============================================================================
+
+SonnenrolloAction.onKeyDown(({ action, context, device, event, payload }) => {
+	var selection = payload.settings.sonnenrolloaction;
+	if(!selection) {
+		selection = "WindowShade1Up";
+	}
+	
+	// Event mapping for WindowShade controls
+	var eventMapping = {
+		"WindowShade1Up": "WindowShade1Up",
+		"WindowShade1Down": "WindowShade1Down",
+		"WindowShade2Up": "WindowShade2Up",
+		"WindowShade2Down": "WindowShade2Down",
+		"WindowShadeUp": "WindowShadeUp",
+		"WindowShadeDown": "WindowShadeDown"
+	};
+	
+	var eventName = eventMapping[selection] || "WindowShade1Up";
+	
+	// NOTE: These events are accepted by API but do NOT work in MAN Lion's City
+	// WindowShades are interactive 3D objects - mouse control only!
+	SendTelemetryAction("/sendeventpress?event=" + eventName);
+});
+
+SonnenrolloAction.onKeyUp(({ action, context, device, event, payload }) => {
+	var selection = payload.settings.sonnenrolloaction;
+	if(!selection) {
+		selection = "WindowShade1Up";
+	}
+	
+	var eventMapping = {
+		"WindowShade1Up": "WindowShade1Up",
+		"WindowShade1Down": "WindowShade1Down",
+		"WindowShade2Up": "WindowShade2Up",
+		"WindowShade2Down": "WindowShade2Down",
+		"WindowShadeUp": "WindowShadeUp",
+		"WindowShadeDown": "WindowShadeDown"
+	};
+	
+	var eventName = eventMapping[selection] || "WindowShade1Up";
+	SendTelemetryAction("/sendeventrelease?event=" + eventName);
+});
+
+SonnenrolloAction.onWillAppear(({ action, context, device, event, payload }) => {
+	$SD.getSettings(context);
+});
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // High Beam Flasher Action (Hold to activate)
 
 var HighBeamInterval = null;
@@ -2441,8 +2705,18 @@ StopBrakeAction.onWillAppear(({ action, context, device, event, payload }) => {
 	// - Solaris: "LED Stop Brake"
 	// - Mercedes: "ButtonLight BusStopBrake"
 	// - Scania: "LedStopBrake"
+	// - MAN: "Bus Stop Brake" Button State (no Lamps available)
 	AddInterval(context, function() { 
 		var lampValue = GlobalLampData["LED Stop Brake"] || GlobalLampData["ButtonLight BusStopBrake"] || GlobalLampData["LedStopBrake"];
+		
+		// MAN: Check Button State if no Lamp available
+		if(!lampValue || lampValue === 0) {
+			var button = GlobalButtonData.find(b => b.Name === "Bus Stop Brake");
+			if(button && button.State !== "Primary") {
+				lampValue = 1.0; // Treat non-Primary state as active
+			}
+		}
+		
 		console.log("[StopBrake] lampValue:", lampValue);
 		if(lampValue && lampValue > 0.0) {
 			$SD.setImage(context, "actions/assets/HaltestelleBremse_on.png");
@@ -2837,6 +3111,50 @@ CameraSwitchAction.onKeyDown(({ action, context, device, event, payload }) => {
 });
 
 CameraSwitchAction.onWillAppear(({ action, context, device, event, payload }) => {
+	$SD.getSettings(context);
+});
+
+// ============================================================================
+// Board Computer Action
+// ============================================================================
+
+BoardComputerAction.onKeyDown(({ action, context, device, event, payload }) => {
+	console.log("[Board Computer] Cycle display view");
+	SendTelemetryAction("/sendeventpress?event=MenuHomescreen");
+});
+
+BoardComputerAction.onKeyUp(({ action, context, device, event, payload }) => {
+	SendTelemetryAction("/sendeventrelease?event=MenuHomescreen");
+});
+
+BoardComputerAction.onWillAppear(({ action, context, device, event, payload }) => {
+	$SD.getSettings(context);
+});
+
+// ============================================================================
+// Camera Mercedes Action
+// ============================================================================
+
+CameraMercedesAction.onKeyDown(({ action, context, device, event, payload }) => {
+	var cameraFunction = payload.settings.camerafunction;
+	if(!cameraFunction) {
+		cameraFunction = "Camera";
+	}
+	
+	console.log("[Camera Mercedes] Function: " + cameraFunction);
+	SendTelemetryAction("/sendeventpress?event=" + cameraFunction);
+});
+
+CameraMercedesAction.onKeyUp(({ action, context, device, event, payload }) => {
+	var cameraFunction = payload.settings.camerafunction;
+	if(!cameraFunction) {
+		cameraFunction = "Camera";
+	}
+	
+	SendTelemetryAction("/sendeventrelease?event=" + cameraFunction);
+});
+
+CameraMercedesAction.onWillAppear(({ action, context, device, event, payload }) => {
 	$SD.getSettings(context);
 });
 
@@ -3333,9 +3651,19 @@ DriverLightAction.onWillAppear(({ action, context, device, event, payload }) => 
 	$SD.setImage(context, "actions/assets/driver-light.png");
 	
 	// Start tracking Driver Light button state
+	// MAN: "DriverLight" (no space), other buses: "Driver Light"
 	RemoveInterval(context);
 	AddInterval(context, function() {
-		UpdateButtonState("Driver Light", "Secondary", "driver-light.png", "driver-light_On.png", context);
+		var button = GlobalButtonData.find(b => b.Name === "Driver Light" || b.Name === "DriverLight");
+		if(button) {
+			// Secondary = On (lit), Primary = Off (dark) - MAN logic
+			var isOn = (button.State === "Secondary" || button.State === true || button.State === "true");
+			if(isOn) {
+				$SD.setImage(context, "actions/assets/driver-light_On.png");
+			} else {
+				$SD.setImage(context, "actions/assets/driver-light.png");
+			}
+		}
 	});
 });
 

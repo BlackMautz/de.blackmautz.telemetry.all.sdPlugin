@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Camera Mercedes Inspector</title>
+    <link rel="stylesheet" href="../../libs/css/sdpi.css">
+</head>
+<body>
+    <div class="sdpi-wrapper">
+        <div type="radio" class="sdpi-item">
+            <div class="sdpi-item-label">Camera Function</div>
+            <select class="sdpi-item-value select" id="camerafunction">
+                <option value="Camera">Überwachungskamera On/Off</option>
+                <option value="ToggleCameraDisplay">Monitor Display On/Off</option>
+                <option value="SwitchPreviousCamera">Previous Camera</option>
+                <option value="SwitchNextCamera">Next Camera</option>
+            </select>
+        </div>
+
+        <details class="message info" open>
+            <summary>ℹ️ Info - Kamera System (Mercedes)</summary>
+            <p>
+                <strong>Überwachungskamera:</strong> Aktiviert/deaktiviert die Kamera<br>
+                <strong>Monitor Display:</strong> Schaltet den Monitor ein/aus<br>
+                <strong>Previous/Next Camera:</strong> Wechselt zwischen Kameraperspektiven<br><br>
+                <strong>Verfügbar in:</strong> Mercedes eCitaro<br>
+                <em>Steuert das komplette Kamera-System des Busses</em>
+            </p>
+        </details>
+    </div>
+
+    <script>
+        let websocket = null;
+        let uuid = null;
+        let actionInfo = {};
+
+        function connectElgatoStreamDeckSocket(inPort, inPluginUUID, inRegisterEvent, inInfo, inActionInfo) {
+            uuid = inPluginUUID;
+            actionInfo = JSON.parse(inActionInfo);
+            
+            websocket = new WebSocket('ws://127.0.0.1:' + inPort);
+            websocket.onopen = function () {
+                const json = { event: inRegisterEvent, uuid: inPluginUUID };
+                websocket.send(JSON.stringify(json));
+                loadSettings();
+            };
+        }
+
+        function loadSettings(payload) {
+            const settings = payload || actionInfo.payload.settings;
+            const select = document.getElementById('camerafunction');
+            if (settings.camerafunction) {
+                select.value = settings.camerafunction;
+            }
+        }
+
+        function sendSettings() {
+            if (websocket && websocket.readyState === 1) {
+                const payload = {
+                    camerafunction: document.getElementById('camerafunction').value
+                };
+                const json = {
+                    event: 'setSettings',
+                    context: actionInfo.context,
+                    payload: payload
+                };
+                websocket.send(JSON.stringify(json));
+            }
+        }
+
+        document.getElementById('camerafunction').addEventListener('change', sendSettings);
+    </script>
+</body>
+</html>

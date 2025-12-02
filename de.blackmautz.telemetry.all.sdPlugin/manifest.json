@@ -6,7 +6,7 @@
 	"Name": "BlackMautz TML Telemetry - ALL",
 	"Icon": "actions/assets/Category",
 	"URL": "https://github.com/BlackMautz/BlackMautz_telemetry_TheBus-streamdeck-custom_Solaris",
-	"Version": "4.2.1.0",
+	"Version": "4.6.0.2",
 	"UUID": "de.blackmautz.telemetry.all",
 	"Software": {
 		"MinimumVersion": "6.4"
@@ -372,6 +372,30 @@
 			"PropertyInspectorPath": "actions/property-inspector/connectionstatus.html"
 		},
 		{
+			"Icon": "actions/assets/view-next-camera",
+			"Name": "📹 Camera Mercedes",
+			"States": [
+				{
+					"Image": "actions/assets/view-next-camera"
+				}
+			],
+			"Tooltip": "Camera system control for Mercedes (Monitor, Camera, Previous/Next).",
+			"UUID": "de.blackmautz.telemetry.all.cameramercedes",
+			"PropertyInspectorPath": "actions/property-inspector/cameramercedesnspector.html"
+		},
+		{
+			"Icon": "actions/assets/zone-interaction",
+			"Name": "🖥️ Board Computer",
+			"States": [
+				{
+					"Image": "actions/assets/zone-interaction"
+				}
+			],
+			"Tooltip": "Cycles through driver display views (Board Computer).",
+			"UUID": "de.blackmautz.telemetry.all.boardcomputer",
+			"PropertyInspectorPath": "actions/property-inspector/boardcomputerinspector.html"
+		},
+		{
 			"Icon": "actions/assets/Category",
 			"Name": "━━━ 🛑 BREMSEN ━━━",
 			"States": [
@@ -689,6 +713,63 @@
 			],
 			"Tooltip": "RBL (Rechnergesteuertes Betriebsleitsystem) - Computer-controlled traffic signal priority system. Sends signals to traffic lights so the bus gets green lights at intersections. Helps buses move faster through the city without waiting at red lights. Commonly used in Germany/Austria for public transit.",
 			"UUID": "de.blackmautz.telemetry.all.rbl"
+		},
+
+		{
+			"Icon": "actions/assets/Category",
+			"Name": "━━━ 🚧 COMING SOON ━━━",
+			"States": [
+				{
+					"Image": "actions/assets/Category",
+					"TitleAlignment": "middle"
+				}
+			],
+			"Tooltip": "Category Header - COMING SOON (In Development)",
+			"UUID": "de.blackmautz.telemetry.all.header.comingsoon"
+		},
+		{
+			"Icon": "actions/assets/Icon_Connected",
+			"Name": "📱 Phone Display (Scania)",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Connected"
+				},
+				{
+					"Image": "actions/assets/Icon_Disconnected"
+				}
+			],
+			"Tooltip": "Displays Scania Phone System status (READ-ONLY - Coming Soon for control)",
+			"UUID": "de.blackmautz.telemetry.all.phonedisplay",
+			"PropertyInspectorPath": "actions/property-inspector/phonedisplayinspector.html"
+		},
+		{
+			"Icon": "actions/assets/Icon_Custom",
+			"Name": "📻 Radio Display (MAN)",
+			"States": [
+				{
+					"Image": "actions/assets/Icon_Custom",
+					"TitleAlignment": "middle"
+				},
+				{
+					"Image": "actions/assets/Icon_Custom",
+					"TitleAlignment": "middle"
+				}
+			],
+			"Tooltip": "Zeigt Radio Button Status (READ-ONLY - Coming Soon for control)",
+			"UUID": "de.blackmautz.telemetry.all.radiodisplay",
+			"PropertyInspectorPath": "actions/property-inspector/radiodisplayinspector.html"
+		},
+		{
+			"Icon": "actions/assets/window-left-up",
+			"Name": "☀️ Sonnenrollo Control (MAN)",
+			"States": [
+				{
+					"Image": "actions/assets/window-left-up"
+				}
+			],
+			"Tooltip": "Sonnenrollo Steuerung (COMING SOON - aktuell nicht funktionsfähig)",
+			"UUID": "de.blackmautz.telemetry.all.sonnenrollo",
+			"PropertyInspectorPath": "actions/property-inspector/sonnenrolloinspector.html"
 		},
 
 		{
