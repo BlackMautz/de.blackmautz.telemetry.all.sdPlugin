@@ -281,7 +281,7 @@ function UpdateTelemetryData()
 				
 				console.log("Data loaded - AllLamps:", GlobalLampData.length, "Buttons:", GlobalButtonData.length, "Doors:", GlobalDoorsData.length);
 				if(GlobalDoorsData.length > 0) {
-					console.log("Scania Doors detected:", GlobalDoorsData.map(d => d.Name + "=" + d.Open).join(", "));
+					console.log("Doors with Progress detected:", GlobalDoorsData.map(d => d.Name + "=" + d.Progress).join(", "));
 				}
 				
 				// Store engine and ignition status

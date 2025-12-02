@@ -122,7 +122,7 @@ Alle Schaltflächen sind jetzt übersichtlich in Kategorien organisiert mit visu
 
 ### 🚪 Türsteuerung (4 Schaltflächen)
 - **Door Button** - Türsteuerung mit konfigurierbaren Optionen
-  - 📊 Tür-Fortschrittsanzeige (zeigt Öffnung in %, Scania: 0-100%, andere: 0%/100%)
+  - 📊 Tür-Fortschrittsanzeige (zeigt Öffnung in Echtzeit von 0-100% bei allen Bussen)
   - Einzelne Türen öffnen/schließen mit Verriegelungsfunktion
 - **Kneeling/Lifting Control** - 6 Optionen:
   - Vorne Anheben
@@ -215,7 +215,7 @@ Alle Schaltflächen sind jetzt übersichtlich in Kategorien organisiert mit visu
 | Feature | Solaris Urbino | Mercedes eCitaro | Scania Citywide | VDL Citea LLE | MAN Lion's City |
 |---------|:--------------:|:----------------:|:---------------:|:-------------:|:---------------:|
 | Alle Standard-Features | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Tür-Fortschrittsanzeige | ⚠️ (nur bei Türen) | ⚠️ (nur bei Türen) | ✅ (0-100%) | ⚠️ (nur bei Türen) | ⚠️ (nur bei Türen) |
+| Tür-Fortschrittsanzeige | ✅ (0-100%) | ✅ (0-100%) | ✅ (0-100%) | ✅ (0-100%) | ✅ (0-100%) |
 | Light Switch | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Pantograph | ✅ | ❌ | ❌ | ❌ | ❌ |
 | Interior Light Toggles | ❌ | ✅ | ❌ | ✅ | ✅ (4 Modi) |
@@ -279,7 +279,7 @@ Alle Schaltflächen sind jetzt übersichtlich in Kategorien organisiert mit visu
 - ✅ **Alle 5 Busse** in einem Plugin - keine separaten Downloads mehr!
 - ✅ **100+ Funktionen** - Komplette Bus-Kontrolle vom Stream Deck
 - ✅ **Smart Icons** - Zeigen automatisch den aktuellen Status
-- ✅ **Tür-Fortschritt** - Sieh die Türöffnung in Echtzeit (Scania: 0-100%)
+- ✅ **Tür-Fortschritt** - Sieh die Türöffnung in Echtzeit (0-100% bei allen Bussen)
 - ✅ **Light Switch** - Alle 6 Lichtpositionen mit einem Button durchschalten
 - ✅ **Custom Events** - Erstelle deine eigenen Buttons für spezielle Aktionen
 
@@ -360,7 +360,7 @@ Alle Schaltflächen sind jetzt übersichtlich in Kategorien organisiert mit visu
 
 ### v2.0.2 - Scania Support & Door Progress (2025-11-29)
 - ✨ **Scania Citywide Support** - Dritter Bus komplett unterstützt!
-- 📊 **Door Progress Display** - Zeigt Türöffnung in % (Scania: 0-100%)
+- 📊 **Door Progress Display** - Zeigt Türöffnung in % (0-100% Echtzeit-Anzeige)
 - 💡 **Light Switch Button** - 3-Wege Schalter für 6 Lichtpositionen
 - 💡 **Scania Lights Button** - Nebellichter + Innenraumbeleuchtung
 - 🪟 **Window Shade Scania** - Front/Left Up/Down Optionen
@@ -528,7 +528,7 @@ All buttons are now organized in categories with visual separators:
 
 ### 🚪 Door Control (4 Buttons)
 - **Door Button** - Door control with configurable options
-  - 📊 Door progress display (shows opening %, Scania: 0-100%, others: 0%/100%)
+  - 📊 Door progress display (shows real-time opening progress 0-100% on all buses)
   - Open/close individual doors with lock function
 - **Kneeling/Lifting Control** - 6 options:
   - Lifting Front
@@ -617,7 +617,7 @@ All buttons are now organized in categories with visual separators:
 | Feature | Solaris Urbino | Mercedes eCitaro | Scania Citywide | VDL Citea LLE | MAN Lion's City |
 |---------|:--------------:|:----------------:|:---------------:|:-------------:|:---------------:|
 | All Standard Features | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Door Progress Display | ⚠️ (doors only) | ⚠️ (doors only) | ✅ (0-100%) | ⚠️ (doors only) | ⚠️ (doors only) |
+| Door Progress Display | ✅ (0-100%) | ✅ (0-100%) | ✅ (0-100%) | ✅ (0-100%) | ✅ (0-100%) |
 | Light Switch | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Pantograph | ✅ | ❌ | ❌ | ❌ | ❌ |
 | Interior Light Toggles | ❌ | ✅ | ❌ | ✅ | ✅ (4 modes) |
@@ -669,7 +669,7 @@ All buttons are now organized in categories with visual separators:
 - ✅ **All 5 buses** in one plugin - no more separate downloads!
 - ✅ **100+ functions** - Complete bus control from Stream Deck
 - ✅ **Smart Icons** - Automatically show current status
-- ✅ **Door Progress** - See door opening in real-time (Scania: 0-100%)
+- ✅ **Door Progress** - See door opening in real-time (0-100% on all buses)
 - ✅ **Light Switch** - Cycle through all 6 light positions with one button
 - ✅ **Custom Events** - Create your own buttons for special actions
 
@@ -750,7 +750,7 @@ All buttons are now organized in categories with visual separators:
 
 ### v2.0.2 - Scania Support & Door Progress (2025-11-29)
 - ✨ **Scania Citywide Support** - Third bus fully supported!
-- 📊 **Door Progress Display** - Shows door opening in % (Scania: 0-100%)
+- 📊 **Door Progress Display** - Shows door opening in % (0-100% real-time display)
 - 💡 **Light Switch Button** - 3-way switch for 6 light positions
 - 💡 **Scania Lights Button** - Fog lights + interior lighting
 - 🪟 **Window Shade Scania** - Front/Left Up/Down options
