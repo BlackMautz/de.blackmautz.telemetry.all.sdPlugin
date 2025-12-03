@@ -14,13 +14,24 @@ Desktop Overlay für The Bus Simulator - zeigt Telemetriedaten transparent über
 - ⚙️ **Einstellungen** - Rechtsklick auf Widget öffnet Einstellungen
 - 🚪 **Sauberes Beenden** - Close-Button im Kontextmenü
 
-## 🚀 Installation
+## 🚀 Installation & Download
 
-### Als .exe starten
-1. Doppelklick auf `TheBus Overlay.exe`
-2. Fertig! 🎉
+### ⬇️ Download (für Enduser)
 
-### Mit npm starten (für Entwickler)
+**[Download TheBusOverlay_v1.0.0_Portable.zip (73 MB)](https://github.com/BlackMautz/de.blackmautz.telemetry.all.sdPlugin/releases)**
+
+1. ZIP-Datei herunterladen
+2. An beliebigem Ort entpacken
+3. Doppelklick auf `TheBus Overlay.exe`
+4. **Fertig!** Keine Installation nötig! 🎉
+
+**Voraussetzungen:**
+- Windows 10/11
+- The Bus Simulator (Mercedes/Solaris/MAN/Scania/VDL)
+- Telemetry Server muss laufen (localhost:37337)
+- **KEIN Stream Deck nötig!**
+
+### 💻 Mit npm starten (nur für Entwickler)
 ```bash
 npm install
 npm start
