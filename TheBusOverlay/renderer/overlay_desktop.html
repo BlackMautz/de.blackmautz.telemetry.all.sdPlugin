@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheBus Desktop Overlay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: transparent;
+            color: #fff;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            /* WICHTIG: Click-through für body */
+            pointer-events: none;
+        }
+
+        /* Alle interaktiven Elemente müssen pointer-events: auto haben */
+        .data-element {
+            pointer-events: auto;
+        }
+
+        /* Verstecke ALLE Edit-Mode Controls */
+        .control-btn,
+        .settings-panel,
+        .resolution-info,
+        .mode-indicator,
+        .obs-info-box,
+        button,
+        input,
+        select {
+            display: none !important;
+        }
+
+        /* Data Container Styles bleiben gleich, aber mit pointer-events */
+        .data-container {
+            position: absolute;
+            pointer-events: auto;
+            background: rgba(20, 20, 30, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 8px 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .data-label {
+            font-size: 11px;
+            opacity: 0.7;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-value {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .data-value.small {
+            font-size: 18px;
+        }
+
+        .data-value.large {
+            font-size: 32px;
+        }
+
+        /* Status Colors */
+        .status-ok { color: #4ade80; }
+        .status-warning { color: #fbbf24; }
+        .status-error { color: #f87171; }
+        .status-neutral { color: #60a5fa; }
+
+        /* Hotkey Info - klein in der Ecke */
+        .hotkey-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(20, 20, 30, 0.7);
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 10px;
+            opacity: 0.3;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .hotkey-info:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hotkey Info -->
+    <div class="hotkey-info">
+        Press F12 to close overlay
+    </div>
+
+    <!-- Data Elements werden dynamisch hier eingefügt -->
+    <div id="overlay-content"></div>
+
+    <script>
+        // Verbindung zur Telemetry API
+        const API_URL = 'http://localhost:37337/vehicles/current';
+        let updateInterval;
+
+        // F12 zum Schließen
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'F12') {
+                if (window.electron) {
+                    window.close();
+                }
+            }
+        });
+
+        async function fetchTelemetryData() {
+            try {
+                const response = await fetch(API_URL);
+                const data = await response.json();
+                updateOverlay(data);
+            } catch (error) {
+                console.error('Fehler beim Abrufen der Telemetrie-Daten:', error);
+            }
+        }
+
+        function updateOverlay(data) {
+            const container = document.getElementById('overlay-content');
+            
+            // Beispiel-Layout - anpassen nach Bedarf
+            container.innerHTML = `
+                <!-- Geschwindigkeit - Links Oben -->
+                <div class="data-container data-element" style="left: 50px; top: 50px;">
+                    <div class="data-label">Geschwindigkeit</div>
+                    <div class="data-value large status-neutral">${Math.round(data.speed || 0)} km/h</div>
+                </div>
+
+                <!-- Motor - Links Mitte -->
+                <div class="data-container data-element" style="left: 50px; top: 150px;">
+                    <div class="data-label">Motor RPM</div>
+                    <div class="data-value status-${getEngineStatus(data.engineRpm)}">${Math.round(data.engineRpm || 0)}</div>
+                </div>
+
+                <!-- Türen - Rechts Oben -->
+                <div class="data-container data-element" style="right: 50px; top: 50px;">
+                    <div class="data-label">Türen</div>
+                    <div class="data-value small status-${data.doorOpen ? 'warning' : 'ok'}">
+                        ${data.doorOpen ? 'OFFEN' : 'GESCHLOSSEN'}
+                    </div>
+                </div>
+
+                <!-- Fahrgäste - Rechts Mitte -->
+                <div class="data-container data-element" style="right: 50px; top: 150px;">
+                    <div class="data-label">Fahrgäste</div>
+                    <div class="data-value">${data.passengerCount || 0}</div>
+                </div>
+
+                <!-- Route Info - Unten Mitte -->
+                <div class="data-container data-element" style="bottom: 50px; left: 50%; transform: translateX(-50%);">
+                    <div class="data-label">Linie / Haltestelle</div>
+                    <div class="data-value small">${data.routeNumber || '---'} → ${data.nextStop || 'Keine Daten'}</div>
+                </div>
+            `;
+        }
+
+        function getEngineStatus(rpm) {
+            if (!rpm) return 'neutral';
+            if (rpm < 1000) return 'ok';
+            if (rpm < 2000) return 'neutral';
+            if (rpm < 3000) return 'warning';
+            return 'error';
+        }
+
+        // Starte Updates
+        fetchTelemetryData();
+        updateInterval = setInterval(fetchTelemetryData, 100); // 10x pro Sekunde
+
+        // Cleanup
+        window.addEventListener('beforeunload', () => {
+            if (updateInterval) clearInterval(updateInterval);
+        });
+    </script>
+</body>
+</html>

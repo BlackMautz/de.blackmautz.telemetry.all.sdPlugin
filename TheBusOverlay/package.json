@@ -1,0 +1,29 @@
+{
+  "name": "thebus-overlay",
+  "version": "1.0.0",
+  "description": "Desktop Overlay for The Bus Telemetry",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "de.blackmautz.thebus.overlay",
+    "productName": "TheBus Overlay",
+    "win": {
+      "target": "dir"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "node_modules/**/*"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "author": "BlackMautz",
+  "license": "MIT"
+}
